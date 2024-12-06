@@ -26,6 +26,7 @@
   .nav-links a {
     color: black;
     font-weight: bold;
+    text-decoration: none;
   }
   
   .nav-links a:hover {
