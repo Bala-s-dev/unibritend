@@ -1,27 +1,52 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import '../styles/Navbar.css'
-import logo from './Assets/logo.png'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/Navbar.css';
+import logo from './Assets/logo.png';
 
 const Navbar = () => {
-  return (
-    <div className='navbar'>
-        <div className='nav-logo'>
-        <img src={logo} alt="" className='logo'/>
-        <p>Unbritind Ltd</p>
-        </div>
-        <ul className='nav-menu'>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About Us</Link></li>
-        <li><Link to="/services">Programs and Universities</Link></li>
-        <li><Link to="/contact">Scholoarship and Funding</Link></li>
-         <li><Link to="/contact">Contact</Link></li>
-        </ul>
-        <div className='nav-login'>
-            <button className='nav-login button'>Login</button>
-        </div>
-    </div>
-  )
-}
+  const [menuActive, setMenuActive] = useState(false);
 
-export default Navbar
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+
+  return (
+    <nav className="navbar">
+      <div className="nav-logo">
+        <img src={logo} alt="Logo" className="logo" />
+        <p>Unbritind Ltd</p>
+      </div>
+
+      <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+
+      <ul className={`nav-menu ${menuActive ? 'active' : ''}`}>
+        <li>
+          <Link to="/" onClick={() => setMenuActive(false)}>Home</Link>
+        </li>
+        <li>
+          <Link to="/about" onClick={() => setMenuActive(false)}>About Us</Link>
+        </li>
+        <li>
+          <Link to="/services" onClick={() => setMenuActive(false)}>Programs and Universities</Link>
+        </li>
+        <li>
+          <Link to="/contact" onClick={() => setMenuActive(false)}>Scholarship and Funding</Link>
+        </li>
+        <li>
+          <Link to="/contact" onClick={() => setMenuActive(false)}>Contact</Link>
+        </li>
+        <li>
+          <Link to="/login" className='nav-login' onClick={() => setMenuActive(false)}>Login</Link>
+        </li>
+      </ul>
+      
+    </nav>
+  );
+};
+
+export default Navbar;
