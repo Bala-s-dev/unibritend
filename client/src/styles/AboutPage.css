@@ -1,0 +1,11 @@
+ .about-page{
+    padding: auto;
+    position: relative;
+    left: 120px;
+    
+     
+ }
+.about-page{
+    overflow-y: auto;
+
+}
