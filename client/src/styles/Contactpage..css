@@ -1,4 +1,4 @@
- 
+
   .cont-main {
     padding: 50px;
     background: url(https://media.istockphoto.com/id/1405728317/vector/global-network-connection-world-map-point-and-line-composition-concept-of-global-business.jpg?s=612x612&w=0&k=20&c=u_DZ9MwU6DFC0-TVD4qnZFmHDu2PoWYhDzppUaijv-c=) no-repeat center;
@@ -33,10 +33,10 @@
   
   /* Form Styling */
   .contact-page {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.7);
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   }
@@ -49,8 +49,9 @@
   
   .contact-page form {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     gap: 15px;
+    
   }
   
   .contact-page input,
@@ -72,19 +73,21 @@
     height: 120px;
   }
   
+   
   .contact-page button {
-    padding: 12px;
+    margin-left: 15px;
+    padding: 10px;
     font-size: 1.2rem;
     background-color: #e74c3c;
     color: #fff;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
     cursor: pointer;
     transition: background 0.3s;
   }
   
   .contact-page button:hover {
-    background-color: #c0392b;
+    background-color:green;
   }
   
   /* Responsive Design */
@@ -94,11 +97,10 @@
     }
   
     .contact-page {
-      padding: 50px;
+      padding: 30px;
     }
   
     .contact-page h2 {
       font-size: 1.8rem;
     }
   }
-  
