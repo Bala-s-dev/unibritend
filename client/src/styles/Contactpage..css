@@ -1,0 +1,104 @@
+ 
+  .cont-main {
+    padding: 50px;
+    background: url(https://media.istockphoto.com/id/1405728317/vector/global-network-connection-world-map-point-and-line-composition-concept-of-global-business.jpg?s=612x612&w=0&k=20&c=u_DZ9MwU6DFC0-TVD4qnZFmHDu2PoWYhDzppUaijv-c=) no-repeat center;
+    background-size: cover;
+    color: #fff;
+  }
+  
+  /* Contact Information */
+  .contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contact-info p svg {
+    color: #e74c3c;
+  }
+  
+  /* Form Styling */
+  .contact-page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .contact-page h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-page input,
+  .contact-page textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .contact-page input::placeholder,
+  .contact-page textarea::placeholder {
+    color: #aaa;
+  }
+  
+  .contact-page textarea {
+    resize: none;
+    height: 120px;
+  }
+  
+  .contact-page button {
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contact-page button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-info h2 {
+      font-size: 2rem;
+    }
+  
+    .contact-page {
+      padding: 50px;
+    }
+  
+    .contact-page h2 {
+      font-size: 1.8rem;
+    }
+  }
+  

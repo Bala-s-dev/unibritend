@@ -1,11 +1,177 @@
- .about-page{
-    padding: auto;
-    position: relative;
-    left: 120px;
-    
-     
- }
-.about-page{
-    overflow-y: auto;
+
+
+/* Section Styling */
+.mani {
+   background-color:azure;
+  color: #333;
+  line-height: 1.6;
+  /* background-image: url(https://c4.wallpaperflare.com/wallpaper/679/183/751/metal-texture-metal-texture-wallpaper-preview.jpg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.mani h2 {
+  font-size: 2rem;
+  color:#004080;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+
+.name{
+  font-size: 5rem;
+  background-image: url( https://img.etimg.com/thumb/width-420,height-315,imgsize-1774997,resizemode-75,msid-114177991/nri/study/indian-students-walk-the-course-less-travelled-at-foreign-campuses/new-zealand-study-abroad-study-in-new-zealand-international-student-new-zealand-ai-generated.jpg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-align: center;
+  filter: drop-shadow(0px 0px 12px grey);
+  margin: 0%;
+  text-align: center;
+}  
+
+
+.about-cont{
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* gap: 40px; */
+  padding: 20px;
+  max-width:800px;
+  margin: auto;
 
 }
+
+
+
+/* Heading Decoration */
+.mani h2:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff6347;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* Content Blocks */
+.cont1, .cont2, .cont3, .cont4, .cont5, .cont6, .cont7, .cont8{
+  margin-bottom:50px;
+  padding: 30px;
+  /* background: #fff; */
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cont1:hover, .cont2:hover, .cont3:hover, .cont4:hover, .cont5:hover, .cont6:hover, .cont7:hover, .cont8:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Welcome Section */
+.wel-cont img {
+  max-width:700px;
+  height:400px;
+  padding-left: 10%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease;
+}
+
+.wel-cont img:hover {
+  transform: scale(1.05);
+}
+
+/* Lists */
+.offer-list, .cont7-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.offer-list li, .cont7-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+  color: #555;
+}
+
+.offer-list li:before, .cont7-list li:before {
+  content: '✔';
+  color: #ff6347;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mani h2 {
+    font-size: 2rem;
+  }
+
+  .wel-cont img{
+    max-width:auto;
+    height:200px;
+     
+  }
+
+  .cont1, .cont2, .cont3, .cont4, .cont5, .cont6, .cont7, .cont8 {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mani h2 {
+    font-size: 1.5rem;
+  }
+  
+  .wel-cont img{
+    max-width:500px;
+    height:200px;
+  }
+
+  .offer-list li, .cont7-list li {
+    padding-left: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+ 
+
+ 
