@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import "../styles/Contactpage..css"
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +26,20 @@ const ContactPage = () => {
   };
 
   return (
+    <section className="cont-main">
+        
+         
+
+      {/* Contact Information */}
+      <div className="contact-info">
+        <h2>Get in Touch</h2>
+       
+        <p> <FaPhoneAlt /> Phone:  +441234567890</p>
+        <p> <FaEnvelope /> Email: info@masterstudiesuk.com  </p>
+      </div>
+
+
+
     <div className="contact-page">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit}>
@@ -34,6 +50,8 @@ const ContactPage = () => {
         <button type="submit">Send Message</button>
       </form>
     </div>
+    
+    </section>
   );
 };
 
