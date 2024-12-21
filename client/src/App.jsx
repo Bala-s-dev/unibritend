@@ -5,6 +5,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer";
+import CollegeList from "./pages/CollegeList";
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/collegeList" element={<CollegeList />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }
