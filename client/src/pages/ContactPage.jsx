@@ -1,57 +1,53 @@
+
+import React from 'react';
+import '../styles/ContactPage.css';
 import React, { useState } from "react";
 import axios from "axios";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import "../styles/ContactPage.css"
 
+
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post("http://localhost:5000/api/contact", formData);
-      alert("Message sent successfully!");
-    } catch (error) {
-      alert("Error sending message.");
-    }
-  };
-
   return (
-    <section className="cont-main">
-        
-         
-
-      {/* Contact Information */}
-      <div className="contact-info">
-        <h2>Get in Touch</h2>
-       
-        <p> <FaPhoneAlt /> Phone:  +441234567890</p>
-        <p> <FaEnvelope /> Email: info@masterstudiesuk.com  </p>
-      </div>
-
-
-
     <div className="contact-page">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Name" onChange={handleChange} required />
-        <input name="email" placeholder="Email" onChange={handleChange} required />
-        <input name="phone" placeholder="Phone" onChange={handleChange} required />
-        <textarea name="message" placeholder="Message" onChange={handleChange} required />
-        <button type="submit">Send Message</button>
-      </form>
+      <div className="contact-info">
+        <h2>Feel free to contact us</h2>
+        <p>Start working with Us. We guarantee that you’ll be able to have any issue resolved within 24 hours.</p>
+        <div className="contact-details">
+          <div className="contact-item">
+            <span className="icon">📍</span>
+            <div>
+              <h3>Our head office address</h3>
+              <p>Address here, 208 Trainer Avenue street, Illinois, UK - 62617.</p>
+            </div>
+          </div>
+          <div className="contact-item">
+            <span className="icon">📞</span>
+            <div>
+              <h3>Call for help</h3>
+              <p>+(21) 255 999 8888</p>
+            </div>
+          </div>
+          <div className="contact-item">
+            <span className="icon">📧</span>
+            <div>
+              <h3>Contact with our support</h3>
+              <p>coursing@mail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="contact-form">
+        <h2>Write to us</h2>
+        <form>
+          <input type="text" name="name" placeholder="Name" />
+          <input type="email" name="email" placeholder="Email" />
+          <input type="text" name="subject" placeholder="Subject" />
+          <textarea name="message" placeholder="Message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
-    
-    </section>
   );
 };
 

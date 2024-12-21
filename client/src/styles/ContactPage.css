@@ -1,106 +1,123 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
 
-  .cont-main {
-    padding: 50px;
-    background: url(https://media.istockphoto.com/id/1405728317/vector/global-network-connection-world-map-point-and-line-composition-concept-of-global-business.jpg?s=612x612&w=0&k=20&c=u_DZ9MwU6DFC0-TVD4qnZFmHDu2PoWYhDzppUaijv-c=) no-repeat center;
-    background-size: cover;
-    color: #fff;
-  }
-  
-  /* Contact Information */
-  .contact-info {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .contact-info h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  .contact-info p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .contact-info p svg {
-    color: #e74c3c;
-  }
-  
-  /* Form Styling */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
   .contact-page {
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    flex-direction: row;
   }
-  
-  .contact-page h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
+}
+
+.contact-info, .contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-info:hover, .contact-form:hover {
+  transform: translateY(-10px);
+}
+
+.contact-info h2, .contact-form h2 {
+  color: #333;
+}
+
+.contact-info p, .contact-form p {
+  color: #666;
+}
+
+.contact-details {
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact-item .icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #ff4081;
+}
+
+.contact-item h3 {
+  margin: 0;
+  color: #333;
+}
+
+.contact-item p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.contact-form h2 {
+  color: #333;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #ff4081;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff4081;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: #e03570;
+}
+
+@media (min-width: 768px) {
+  .contact-info, .contact-form {
+    width: 45%;
   }
-  
-  .contact-page form {
-    display: flex;
-    flex-direction:column;
-    gap: 15px;
-    
+}
+
+@media (max-width: 767px) {
+  .contact-info, .contact-form {
+    width: 90%;
   }
-  
-  .contact-page input,
-  .contact-page textarea {
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .contact-info, .contact-form {
     width: 100%;
   }
-  
-  .contact-page input::placeholder,
-  .contact-page textarea::placeholder {
-    color: #aaa;
-  }
-  
-  .contact-page textarea {
-    resize: none;
-    height: 120px;
-  }
-  
-   
-  .contact-page button {
-    margin-left: 15px;
-    padding: 10px;
-    font-size: 1.2rem;
-    background-color: #e74c3c;
-    color: #fff;
-    border: 2px solid white;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .contact-page button:hover {
-    background-color:green;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .contact-info h2 {
-      font-size: 2rem;
-    }
-  
-    .contact-page {
-      padding: 30px;
-    }
-  
-    .contact-page h2 {
-      font-size: 1.8rem;
-    }
-  }
+}

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "../styles/HeroSection.css";
 
+
 const HeroSection = () => {
   const messages = [
     "Your Trusted Partner for UK Studies!",
     "Achieve Your Dreams with Expert Guidance.",
     "Start Your Academic Journey Today!",
   ];
+
+  
 
   const [currentMessage, setCurrentMessage] = useState(0);
 
