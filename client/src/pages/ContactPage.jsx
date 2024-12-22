@@ -1,5 +1,13 @@
+
 import React from "react";
 import "../styles/ContactPage.css";
+
+import React, { useState } from "react";
+import '../styles/ContactPage.css';
+import axios from "axios";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+
+
 
 const ContactPage = () => {
   return (
