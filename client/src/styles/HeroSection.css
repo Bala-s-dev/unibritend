@@ -1,5 +1,5 @@
 .hero-section {
-  background: linear-gradient(120deg, #004080, #002040);
+
   color: white;
   text-align: center;
   padding: 65px 20px;
@@ -7,6 +7,28 @@
   overflow: hidden;
   animation: backgroundMove 20s linear infinite;
 }
+
+.video-background {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background : rgba(0, 0, 0, 0.5);
+  
+}
+
+
 
 @keyframes backgroundMove {
   0% { background-position: 0% 50%; }
