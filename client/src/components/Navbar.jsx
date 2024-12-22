@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
-import logo from './Assets/logo.png';
+import logo from './Assets/logo.jpg';
 
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -32,10 +32,13 @@ const Navbar = () => {
           <Link to="/about" onClick={() => setMenuActive(false)}>About Us</Link>
         </li>
         <li>
-          <Link to="/services" onClick={() => setMenuActive(false)}>Programs and Universities</Link>
+          <Link to="/collegeList" onClick={() => setMenuActive(false)}>Uk Universities</Link>
         </li>
         <li>
           <Link to="/contact" onClick={() => setMenuActive(false)}>Scholarship and Funding</Link>
+        </li>
+        <li>
+          <Link to="" onClick={() => setMenuActive(false)}>Contact</Link>
         </li>
         <li>
           <Link to="/contact" onClick={() => setMenuActive(false)}>Contact</Link>

@@ -1,129 +1,135 @@
-import React, { useState } from "react";
-import "../styles/Testimonials.css";
+import React, { useState } from 'react';
+import '../styles/Testimonials.css';
 
-const Testimonials = () => {
+const Testimonial = () => {
   const [testimonials, setTestimonials] = useState([
     {
-      name: "Bala",
-      review: "Unibritind transformed my academic journey. Highly recommended!",
+      name: 'John Doe',
+      profileImg: 'https://randomuser.me/api/portraits/men/32.jpg',
       rating: 5,
-      photo: "https://randomuser.me/api/portraits/men/32.jpg",
+      message: 'Great service! I highly recommend this platform for its excellent customer support and ease of use.',
     },
     {
-      name: "Leo",
-      review: "Excellent support throughout the visa process. Thank you!",
+      name: 'Jane Smith',
+      profileImg: 'https://randomuser.me/api/portraits/women/32.jpg',
       rating: 4,
-      photo: "https://randomuser.me/api/portraits/women/44.jpg",
+      message: 'The platform is good, but there is room for improvement in the UI design.',
     },
     {
-      name: "Das",
-      review: "Excellent support throughout the visa process. Thank you!",
-      rating: 4,
-      photo: "https://randomuser.me/api/portraits/women/44.jpg",
+      name: 'Mark Wilson',
+      profileImg: 'https://randomuser.me/api/portraits/men/48.jpg',
+      rating: 5,
+      message: 'Absolutely amazing! The experience was seamless, and I loved the interface!',
     },
   ]);
 
-  const [isFormVisible, setIsFormVisible] = useState(false);
   const [newTestimonial, setNewTestimonial] = useState({
-    name: "",
-    review: "",
+    name: '',
+    profileImg: '',
     rating: 0,
-    photo: "https://randomuser.me/api/portraits/lego/2.jpg", // Default photo for new testimonials
+    message: '',
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewTestimonial({ ...newTestimonial, [name]: value });
+  const [isAdding, setIsAdding] = useState(false); // Toggle between adding and displaying testimonials
+
+  const handleAddTestimonial = () => {
+    setIsAdding(true); // Show testimonial form
   };
 
-  const handleRatingChange = (rating) => {
-    setNewTestimonial({ ...newTestimonial, rating });
+  const handleSaveTestimonial = () => {
+    if (newTestimonial.name && newTestimonial.rating && newTestimonial.message && newTestimonial.profileImg) {
+      setTestimonials([...testimonials, newTestimonial]);
+      setIsAdding(false); // Hide testimonial form after saving
+      setNewTestimonial({ name: '', profileImg: '', rating: 0, message: '' }); // Reset form
+    } else {
+      alert('Please fill in all fields');
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTestimonials([...testimonials, newTestimonial]);
-    setNewTestimonial({ name: "", review: "", rating: 0, photo: "" });
-    setIsFormVisible(false);
+  const handleProfileImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setNewTestimonial({ ...newTestimonial, profileImg: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
-    <section className="testimonials-section">
-      <h2>What Our Students Say</h2>
-      <div className="testimonials-container">
+    <div className="testimonial-container">
+      <h2 className="testimonial-header">Customer Testimonials</h2>
+
+      <div className="testimonial-carousel">
         {testimonials.map((testimonial, index) => (
-          <div className="testimonial-card" key={index}>
-            <div className="card-front">
-              <img
-                src={testimonial.photo}
-                alt={`${testimonial.name}'s profile`}
-                className="testimonial-photo"
-              />
-              <h3>{testimonial.name}</h3>
+          <div className="testimonial-item" key={index}>
+            <div className="testimonial-profile">
+              <img src={testimonial.profileImg} alt={testimonial.name} className="profile-icon" />
+              <h3 className="testimonial-name">{testimonial.name}</h3>
               <div className="testimonial-rating">
-                {Array.from({ length: 5 }, (_, starIndex) => (
-                  <span
-                    key={starIndex}
-                    className={starIndex < testimonial.rating ? "star filled" : "star"}
-                  >
-                    ★
-                  </span>
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className={i < testimonial.rating ? 'star filled' : 'star'}>★</span>
                 ))}
               </div>
             </div>
-            <div className="card-back">
-              <p className="testimonial-review">"{testimonial.review}"</p>
-            </div>
+            <p className="testimonial-message">"{testimonial.message}"</p>
           </div>
         ))}
       </div>
 
-      {/* Add Testimonial Button */}
-      <button className="add-testimonial-button" onClick={() => setIsFormVisible(true)}>
-        Add Testimonial
-      </button>
-
-      {/* Add Testimonial Form */}
-      {isFormVisible && (
-        <div className="add-testimonial-form">
+      {!isAdding ? (
+        <button className="add-button" onClick={handleAddTestimonial}>Add Testimonial</button>
+      ) : (
+        <div className="add-testimonial">
           <h3>Add Your Testimonial</h3>
-          <form onSubmit={handleSubmit}>
+
+          <input
+            type="text"
+            placeholder="Your name"
+            value={newTestimonial.name}
+            onChange={(e) => setNewTestimonial({ ...newTestimonial, name: e.target.value })}
+            className="input-field"
+          />
+
+          <textarea
+            value={newTestimonial.message}
+            onChange={(e) => setNewTestimonial({ ...newTestimonial, message: e.target.value })}
+            placeholder="Write your message..."
+            rows="4"
+            className="input-field"
+          />
+
+          <div className="rating-section">
+            <label>Rating: </label>
+            {[...Array(5)].map((_, i) => (
+              <span
+                key={i}
+                className={i < newTestimonial.rating ? 'star filled' : 'star'}
+                onClick={() => setNewTestimonial({ ...newTestimonial, rating: i + 1 })}
+              >
+                ★
+              </span>
+            ))}
+          </div>
+
+          <div className="upload-section">
+            <label>Upload Profile Image:</label>
             <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={newTestimonial.name}
-              onChange={handleInputChange}
-              required
+              type="file"
+              onChange={handleProfileImageChange}
+              accept="image/*"
             />
-            <textarea
-              name="review"
-              placeholder="Your Review"
-              value={newTestimonial.review}
-              onChange={handleInputChange}
-              required
-            ></textarea>
-            <div className="rating-input">
-              <label>Rating:</label>
-              {Array.from({ length: 5 }, (_, index) => (
-                <span
-                  key={index}
-                  className={index < newTestimonial.rating ? "star filled" : "star"}
-                  onClick={() => handleRatingChange(index + 1)}
-                >
-                  ★
-                </span>
-              ))}
-            </div>
-            <button type="submit">Submit</button>
-            <button type="button" className="cancel-button" onClick={() => setIsFormVisible(false)}>
-              Cancel
-            </button>
-          </form>
+            {newTestimonial.profileImg && (
+              <img src={newTestimonial.profileImg} alt="Profile Preview" className="profile-preview" />
+            )}
+          </div>
+
+          <button className="save-button" onClick={handleSaveTestimonial}>Save Testimonial</button>
         </div>
       )}
-    </section>
+    </div>
   );
 };
 
-export default Testimonials;
+export default Testimonial;

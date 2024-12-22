@@ -1,0 +1,80 @@
+/* Add these styles to ApplyForm.css */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .apply-form-container {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .apply-form-container h2 {
+    text-align: center;
+    color: #003366;
+  }
+  
+  .apply-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .apply-form-container input,
+  .apply-form-container select {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .apply-form-container .city-mobile-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .apply-form-container .city-mobile-container select,
+  .apply-form-container .city-mobile-container input {
+    width: 48%;
+  }
+  
+  .apply-form-container button {
+    padding: 10px;
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .apply-form-container button:hover {
+    background-color: #002244;
+  }
+  
+  .apply-form-container p {
+    text-align: center;
+    color: #666;
+  }
+  

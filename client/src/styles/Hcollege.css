@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.head {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    background-color: #004f89; /* Deep Blue */
+    color: #fff;
+    border: 3px solid #5b8fab; /* Light Blue */
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 8px;
+    width: 80%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: #FFF;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    padding: 5px;
+}
+
+.container .card:hover {
+    height: 400px;
+}
+
+.container .card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container .card:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container .card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container .card:hover .content {
+    top: 130px;
+    height: 250px;
+}
+
+.container .card .content h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--clr);
+}
+
+.container .card .content p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: #333;
+}
+
+.container .card .content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    text-decoration: none;
+    background: var(--clr);
+    font-weight: 500;
+    background-color: lightblue;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px blue;
+    border-radius: 15px;
+  
+}
+
+.container .card .content a:hover {
+    opacity: 0.8;
+}
+
+.custom-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    padding: 12px 48px 12px 16px;
+    overflow: hidden;
+    font-weight: 600;
+    color: #4f46e5; /* Indigo-600 */
+    background-color: #f9fafb; /* Gray-50 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in-out;
+  }
+  
+  .custom-button:hover {
+    padding-left: 40px;
+    padding-right: 24px;
+    color: white;
+  }
+  
+  .custom-button:hover .button-highlight {
+    height: 100%;
+  }
+  
+  .custom-button:hover .button-icon-right {
+    transform: translateX(12px);
+  }
+  
+  .custom-button:hover .button-icon-left {
+    transform: translateX(0);
+  }
+  
+  .button-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #4f46e5; /* Indigo-600 */
+    transition: height 0.15s ease-in-out;
+  }
+  
+  .button-icon-right,
+  .button-icon-left {
+    position: absolute;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .button-icon-right {
+    right: 16px;
+    padding-right: 16px;
+    transform: translateX(12px);
+  }
+  
+  .button-icon-left {
+    left: 10px;
+    padding-left: 10px;
+    transform: translateX(-12px);
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: #22c55e; /* Green-400 */
+  }
+  
+  .button-text {
+    position: relative;
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+  }
+  
+
+@media (max-width: 480px) {
+    .container .card {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .container .card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .container .card .content p {
+        font-size: 0.8rem;
+    }
+
+    .container .card .content a {
+        font-size: 0.9rem;
+    }
+}
