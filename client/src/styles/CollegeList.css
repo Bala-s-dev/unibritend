@@ -7,6 +7,46 @@
   padding: 0;
 }
 
+body{
+  padding-top: 75px;
+}
+
+.search-container{
+  width: max-content;
+  display: block;
+  margin: 0 auto;
+}
+
+.search-input{
+  margin: 10px;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none;
+  &:focus{
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease; 
+  	  opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease; 
+  	 opacity: 0;
+     }    
+   }
+ }
+
+
+
+
 html { font-size: 70.5%; }
 
 body {
@@ -14,21 +54,27 @@ body {
   font-family: 'Open Sans', sans-serif;
   position: relative;
  
-
 }
-
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
 
 
 .cname {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #333;
-  font-size: medium;
+  font-size: 18px;
   margin: 5px;
-  padding: 8px;
+  padding: 5px;
   text-align: center;
   font-weight: bold;
 }
-
+.location {
+  color: blue;
+}
 /* Typography =======================*/
 
 /* Headings */
@@ -36,10 +82,7 @@ body {
 /* Main heading for card's front cover */
 
 /* Main heading for inside page */
-.college-name { 
-  padding-bottom: 1rem; 
-  width: 100%;
-}
+
 
 /* Mixed */
 
@@ -50,12 +93,10 @@ body {
   font-weight: 800;
   margin-top: .2rem;
   margin-bottom: 0px;
-}
-
-.college-name
- { color:#333;
+  color:#333;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 
 .card-front-head {
   background-color: lightblue;
@@ -133,14 +174,7 @@ body {
 
 /* Layout Structure=========================================*/
 
-.main {
- 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-}
+
 
 /* Container to hold all cards in one place */
 .card-area {
@@ -330,16 +364,30 @@ body {
   }
 }
 
+.card-front-head {
+  font-size: small;
+}
+
 @media only screen and (max-width: 768px) {
   .card-area {
-    grid-template-columns: repeat(1 , 1fr); /* 2 cards per row for mobile */
+      grid-template-columns: 1fr;
   }
 
   .card {
     width: 16rem;
     height: 16rem;
   }
-
+  .college-name {
+    font-size: 1.2;
+  }
+  .card-front-head {
+    font-size: small;
+  }
+  .college-desc {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+    margin: auto;
+  }
   .flip-card,
   .inside-page {
     width: 16rem;
@@ -347,8 +395,8 @@ body {
   }
 
   .inside-page__btn {
-    font-size: 1rem;
-    padding: 0.5rem 0.6rem;
+    font-size: 0.5rem;
+    padding: 0.3rem 0.4rem;
   }
 
   .footer {
@@ -366,6 +414,19 @@ body {
     height: 14rem;
   }
 
+  .card-front-head {
+    font-size: smaller;
+    padding: 10px;
+  }
+
+  .cname {
+    padding-bottom: 4px;
+  }
+  .college-desc {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: smaller;
+    margin: auto;
+  }
   .flip-card,
   .inside-page {
     width: 14rem;
@@ -373,8 +434,8 @@ body {
   }
 
   .inside-page__btn {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.5rem;
+    font-size: 0.5rem;
+    padding: 0.3rem 0.4rem;
   }
 
   .footer {
@@ -383,7 +444,7 @@ body {
   }
 
   .college-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   
