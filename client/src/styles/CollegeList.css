@@ -1,11 +1,11 @@
 /* CSS reset */
-*,
+
 *::after,
 *::before {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
+} 
 
 body{
   padding-top: 75px;
@@ -54,6 +54,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   position: relative;
  
+<<<<<<< HEAD
+ 
+
+=======
+>>>>>>> 1a0b0233073af04e96c294c83bede343583acc7e
 }
 .main {
   display: flex;
@@ -174,7 +179,21 @@ body {
 
 /* Layout Structure=========================================*/
 
+<<<<<<< HEAD
+ 
 
+.main {
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+}
+=======
+
+>>>>>>> 1a0b0233073af04e96c294c83bede343583acc7e
 
 /* Container to hold all cards in one place */
 .card-area {
@@ -408,6 +427,8 @@ body {
   html {
     font-size: 62.5%; /* Adjusting base font size for smaller screens */
   }
+
+   
 
   .card {
     width: 14rem;

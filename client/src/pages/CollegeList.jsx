@@ -86,19 +86,6 @@ const CollegeList = () => {
   );
 
   return (
-
-    
-    <div>
-       <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search colleges..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="search-input"
-          
-        />
-      </div>
       
       <main className="main">
         <section className="card-area">
@@ -164,7 +151,7 @@ const CollegeList = () => {
           )}
         </section>
       </main>
-    </div>
+   
   );
 };
 

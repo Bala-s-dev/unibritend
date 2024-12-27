@@ -72,7 +72,7 @@ class HCollege extends React.Component {
   <span className="button-icon-left">
     
   </span>
-  <span className="button-text"> <Link to="/collegeList" >View More </Link>y</span>
+  <span className="button-text"> <Link to="/collegeList" >View More </Link></span>
 </a>
 
             </span>
