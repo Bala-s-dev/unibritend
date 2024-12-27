@@ -78,8 +78,7 @@ const colleges = [
 
 const CollegeList = () => {
   return (
-    <div>
-      
+    
       <main className="main">
         <section className="card-area">
           {colleges.map((college, index) => (
@@ -142,7 +141,7 @@ const CollegeList = () => {
           ))}
         </section>
       </main>
-    </div>
+   
   );
 };
 
