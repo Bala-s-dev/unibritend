@@ -1,177 +1,172 @@
+/* AboutPage.css */
 
-
-/* Section Styling */
-.mani {
-   background-color:azure;
-  color: #333;
-  line-height: 1.6;
-  /* background-image: url(https://c4.wallpaperflare.com/wallpaper/679/183/751/metal-texture-metal-texture-wallpaper-preview.jpg); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-
-.mani h2 {
-  font-size: 2rem;
-  color:#004080;
-  margin-bottom: 20px;
-  text-align: center;
-  position: relative;
-  animation: fadeIn 1s ease-in-out;
-}
-
-
-
-.name{
-  font-size: 5rem;
-  background-image: url( https://img.etimg.com/thumb/width-420,height-315,imgsize-1774997,resizemode-75,msid-114177991/nri/study/indian-students-walk-the-course-less-travelled-at-foreign-campuses/new-zealand-study-abroad-study-in-new-zealand-international-student-new-zealand-ai-generated.jpg);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-box-align: center;
-  filter: drop-shadow(0px 0px 12px grey);
-  margin: 0%;
-  text-align: center;
-}  
-
-
-.about-cont{
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /* gap: 40px; */
+.about-page {
   padding: 20px;
-  max-width:800px;
-  margin: auto;
-
+  background-color: #f1f1f1; /* Soft light background for better readability */
 }
 
-
-
-/* Heading Decoration */
-.mani h2:after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #ff6347;
-  margin: 10px auto;
-  border-radius: 2px;
-}
-
-/* Content Blocks */
-.cont1, .cont2, .cont3, .cont4, .cont5, .cont6, .cont7, .cont8{
-  margin-bottom:50px;
-  padding: 30px;
-  /* background: #fff; */
-  background: rgba(255, 255, 255, 0.28);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3.4px);
-  -webkit-backdrop-filter: blur(3.4px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: slideUp 0.8s ease-in-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cont1:hover, .cont2:hover, .cont3:hover, .cont4:hover, .cont5:hover, .cont6:hover, .cont7:hover, .cont8:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Welcome Section */
-.wel-cont img {
-  max-width:700px;
-  height:400px;
-  padding-left: 10%;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  transition: transform 0.5s ease;
-}
-
-.wel-cont img:hover {
-  transform: scale(1.05);
-}
-
-/* Lists */
-.offer-list, .cont7-list {
-  list-style: none;
-  padding-left: 20px;
-}
-
-.offer-list li, .cont7-list li {
-  margin-bottom: 10px;
+.head-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://metroedu.com.np/wp-content/uploads/2019/11/UK.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 20px;
   position: relative;
-  padding-left: 25px;
-  color: #555;
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.4); /* Dark overlay for text visibility */
 }
 
-.offer-list li:before, .cont7-list li:before {
+.head-section h1 {
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.content {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.section {
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.mission,
+.vision,
+.values {
+  background-color: #f7f7f7;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.section ul {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.6;
+}
+
+.section ul li {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.section ul li:before {
   content: '✔';
-  color: #ff6347;
   position: absolute;
   left: 0;
-  font-size: 1.2rem;
+  color: #6c5ce7; /* Purple icon for better readability */
 }
 
-/* Responsive Design */
+.section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Core Values Icons */
+.section ul li strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.section .core-values-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.core-values-icons div {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.core-values-icons i {
+  font-size: 30px;
+  color: #6c5ce7;
+  margin-right: 10px;
+}
+
+.core-values-icons span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Button Styles */
+.custom-button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  padding: 12px 40px;
+  background-color: #0984e3;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #6c5ce7;
+  transform: translateY(-5px);
+}
+
+.custom-button .button-text {
+  font-size: 1.1rem;
+}
+
+.custom-button .button-text a {
+  color: white;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
-  .mani h2 {
-    font-size: 2rem;
+  .head-section h1 {
+    font-size: 3rem;
   }
 
-  .wel-cont img{
-    max-width:auto;
-    height:200px;
-     
+  .section h2 {
+    font-size: 1.5rem;
   }
 
-  .cont1, .cont2, .cont3, .cont4, .cont5, .cont6, .cont7, .cont8 {
-    padding: 15px;
+  .section ul li {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .mani h2 {
-    font-size: 1.5rem;
-  }
-  
-  .wel-cont img{
-    max-width:500px;
-    height:200px;
+  .head-section h1 {
+    font-size: 2.5rem;
   }
 
-  .offer-list li, .cont7-list li {
-    padding-left: 20px;
+  .section h2 {
+    font-size: 1.2rem;
+  }
+
+  .section ul li {
     font-size: 0.9rem;
   }
-}
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+  .core-values-icons {
+    flex-direction: column;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .core-values-icons div {
+    margin-bottom: 15px;
   }
 }
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
- 
-
- 

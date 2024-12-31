@@ -1,22 +1,27 @@
 import React from "react";
-import HeroSection from "../components/HeroSection";
-import StatsSection from "../components/StatsSection"
-import ServicesOverview from "../components/ServicesOverview";
-import QuickLinks from "../components/QuickLinks";
-import CallToAction from "../components/CallToAction";
-import Footer from "../components/Footer";
-import Testimonials from "../components/Testimonials";
+import Apply from "../components/Apply/Apply";
+import HeroSection from "../components/HeroSection/HeroSection";
+import ServicesOverview from "../components/ServiceOverview/ServicesOverview";
+import QuickLinks from "../components/QuickLinks/QuickLinks";
+import Hcollege from "../components/Hcollege/Hcollege"
+import Footer from "../components/Footer/Footer";
+import Testimonials from "../components/Testimonials/Testimonials";
+import Chatbot from "../components/Chatbot/Chatbot";
+
 
 
 const HomePage = () => {
   return (
     <div>
+      <Apply/>
       <HeroSection />
-      <StatsSection />
       <ServicesOverview />
-      <CallToAction />
+      <Hcollege />
       <Testimonials/>
       <QuickLinks />
+      <Chatbot/>
+      <Footer />
+      
     </div>
   );
 };
