@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Select from 'react-select';
-import '../styles/Apply.css';
+import './Apply.css';
 
 const countryOptions = [
-  { value: 'US', label: 'United States (+1)', code: '+1' },
-  { value: 'IN', label: 'India (+91)', code: '+91' },
-  { value: 'GB', label: 'United Kingdom (+44)', code: '+44' },
-  { value: 'CA', label: 'Canada (+1)', code: '+1' },
-  { value: 'AU', label: 'Australia (+61)', code: '+61' },
-  // Add more countries as needed
+  { value: 'US', label: 'United States', code: '+1 ' },
+  { value: 'IN', label: 'India', code: '+91 ' },
+  { value: 'GB', label: 'United Kingdom', code: '+44 ' },
+  { value: 'CA', label: 'Canada', code: '+1 ' },
+  { value: 'AU', label: 'Australia', code: '+61 ' },
 ];
 
 const Apply = () => {
@@ -19,7 +18,7 @@ const Apply = () => {
     city: '',
     mobileNumber: '',
     location: '',
-    countryCode: ''
+    countryCode: '',
   });
   const [showPopup, setShowPopup] = useState(true);
 
@@ -27,7 +26,7 @@ const Apply = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -40,7 +39,17 @@ const Apply = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log('Submitted Data:', formData);
+    alert('Form Submitted Successfully!');
+    setFormData({
+      name: '',
+      email: '',
+      course: '',
+      city: '',
+      mobileNumber: '',
+      location: '',
+      countryCode: '',
+    });
   };
 
   const handleClose = () => {
@@ -60,7 +69,9 @@ const Apply = () => {
       {showPopup && (
         <div className="popup-overlay">
           <div className="apply-form-container">
-            <span className="close-icon" onClick={handleClose}>&times;</span>
+            <span className="close-icon" onClick={handleClose}>
+              &times;
+            </span>
             <h2>Apply Now</h2>
             <form onSubmit={handleSubmit}>
               <input
@@ -88,37 +99,29 @@ const Apply = () => {
                 required
               />
 
-              <Select
+              {/* Replace Dropdown with Manual Input for Location */}
+              <input
+                type="text"
                 name="location"
-                options={countryOptions}
-                placeholder="Select Location"
-                onChange={(selectedOption) => handleSelectChange(selectedOption, { name: 'location' })}
-                isSearchable
+                placeholder="Enter Location"
+                value={formData.location}
+                onChange={handleChange}
+                required
               />
-
-              <div className="city-mobile-container">
-                <Select
-                  name="countryCode"
-                  options={countryOptions.map(({ code, label }) => ({ value: code, label }))}
-                  placeholder="Country Code"
-                  onChange={(selectedOption) => handleSelectChange(selectedOption, { name: 'countryCode' })}
-                  isSearchable
-                />
-                <input
-                  type="text"
-                  name="mobileNumber"
-                  placeholder="Mobile Number"
-                  value={formData.mobileNumber}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                name="mobileNumber"
+                placeholder="Mobile Number"
+                value={formData.mobileNumber}
+                onChange={handleChange}
+                required
+              />
               <button type="submit">APPLY NOW</button>
             </form>
             <p>*All Fields are Mandatory</p>
           </div>
         </div>
-      )}  
+      )}
     </>
   );
 };

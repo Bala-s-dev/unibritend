@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/QuickLinks.css";
+import "./QuickLinks.css";
 
 const QuickLinks = () => {
   const links = [

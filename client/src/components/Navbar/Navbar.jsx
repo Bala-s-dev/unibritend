@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Navbar.css';
-import logo from './Assets/logo.jpg';
+import './Navbar.css';
+import logo from '../../Assets/logo.jpg';
 
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);

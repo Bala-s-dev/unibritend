@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/Hcollege.css"; 
+import "./Hcollege.css"; 
 import { Link } from 'react-router-dom'; // Assuming this CSS file contains necessary styles for the layout
 
 class HCollege extends React.Component {
@@ -9,7 +9,7 @@ class HCollege extends React.Component {
         <h2 className="head">Join Topmost UK Universities</h2>
         <div className="container">
           {/* University 1 */}
-          <div className="card" >
+          <div className="card">
             <div className="img-box">
               <img src="https://cdn.prod.website-files.com/5f13b6a8234e41e4d5c4cb7e/6511a66308ea17f65b12202b_5.png" alt="Anglia Ruskin University" />
             </div>
@@ -25,7 +25,7 @@ class HCollege extends React.Component {
           </div>
           
           {/* University 2 */}
-          <div className="card" >
+          <div className="card">
             <div className="img-box">
               <img src="https://media.istockphoto.com/id/172469072/photo/christ-churchs-tom-tower-and-college-oxford-university-united-kingdom.jpg?s=612x612&w=0&k=20&c=xr6V1ci4P_hBJa5_KGJ1XiqF-THXY71M-f9AdUEemA0=" alt="University of Oxford" />
             </div>
@@ -41,7 +41,7 @@ class HCollege extends React.Component {
           </div>
 
           {/* University 3 */}
-          <div className="card" >
+          <div className="card">
             <div className="img-box">
               <img src="https://images.shiksha.com/mediadata/images/articles/1708583568phpp4Gpxz.jpeg" alt="University of Cambridge" />
             </div>
@@ -56,33 +56,26 @@ class HCollege extends React.Component {
             </div>
           </div>
           <span>
-          <a href="https://loadmcx.com" target="_blank" className="custom-button">
-  <span className="button-highlight"></span>
-  <span className="button-icon-right">
-    <svg
-      className="icon"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-    </svg>
-  </span>
-  <span className="button-icon-left">
-    
-  </span>
-  <span className="button-text"> <Link to="/collegeList" >View More </Link>y</span>
-</a>
-
-            </span>
-
-          {/* Additional Colleges can be added here by duplicating the above "card" structure */}
+            <a href="https://loadmcx.com" target="_blank" className="custom-button">
+              <span className="button-highlight"></span>
+              <span className="button-icon-right">
+                <svg
+                  className="icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </span>
+              <span className="button-icon-left"></span>
+              <span className="button-text"><Link to="/collegeList">View More</Link></span>
+            </a>
+          </span>
 
         </div>
-        
       </div>
-    
     );
   }
 }

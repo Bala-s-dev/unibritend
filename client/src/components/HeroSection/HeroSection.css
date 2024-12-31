@@ -1,0 +1,198 @@
+/* Updated Hero Section with Glassmorphism and Modern Design */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Inter', sans-serif; /* Clean and modern font */
+  background: linear-gradient(
+      135deg,
+      rgba(7, 85, 119, 0.9),
+      rgba(32, 58, 67, 0.9),
+      rgba(44, 83, 100, 0.9)
+    ),
+    url('https://img.freepik.com/free-vector/back-school-background-flat-design_23-2148596550.jpg?t=st=1735487165~exp=1735490765~hmac=5b531c816b5b23a9560cb53a1b2979b1ed95f185e890f25ddac46e57f3cc2f9e&w=996') no-repeat center center/cover; /* Education-themed background */
+  background-size: cover;
+  background-blend-mode: overlay; /* Gradient overlay for better text readability */
+  overflow: scroll;
+  padding: 0 20px; /* Add some padding for smaller screens */
+}
+
+/* Glassmorphism Card for Content */
+.hero-content {
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  backdrop-filter: blur(10px); /* Adds a frosted glass look */
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  max-width: 80%; /* Ensure content doesn't stretch too much */
+  width: 100%; /* Allow content to take full width on smaller screens */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffeb3b; /* Bright yellow for visibility */
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffcc80; /* Soft orange for a warm tone */
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Buttons with Modern Hover Effects */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.hero-button {
+  padding: 12px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  margin: 5px; /* Add margin for better spacing on smaller screens */
+}
+
+.hero-button.primary {
+  background-color: #00bcd4; /* Vibrant teal */
+  color: #ffffff;
+  border: 2px solid #ffeb3b; /* Bright yellow border */
+}
+
+.hero-button.primary:hover {
+  background-color: #0097a7;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+}
+
+.hero-button.secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffcc80; /* Soft orange border */
+}
+
+.hero-button.secondary:hover {
+  background-color: #ffffff;
+  color: #00bcd4;
+}
+
+/* Stats Section Styles */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.05); /* Slightly transparent background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  margin-top: 30px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism for individual cards */
+  border-radius: 12px;
+  background-color: rgba(30, 153, 230, 0.095);
+  border: 2px solid #ffeb3b; /* Bright yellow border */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  flex: 1 1 200px;
+  min-width: 150px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 10px; /* Add margin for spacing */
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+}
+
+.stat-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffeb3b; /* Bright yellow font */
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffcc80; /* Soft orange font */
+}
+
+/* Responsive Stats Section */
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    overflow: ; /* Allow hero section to adjust height */
+  }
+
+  .hero-content {
+    padding: 30px;
+    width: 90%; /* Take up more width on smaller screens */
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+
+  .hero-button {
+    width: 100%; /* Make buttons full-width on small screens */
+    margin: 10px 0;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stat-card {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+    /* Add margin for spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem; /* Reduce font size on very small screens */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Adjust text size for smaller screens */
+  }
+
+  .stat-card h2 {
+    font-size: 1.5rem; /* Smaller heading font size */
+  }
+
+  .stat-card p {
+    font-size: 0.9rem; /* Smaller paragraph font size */
+  }
+}
