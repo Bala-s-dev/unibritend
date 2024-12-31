@@ -56,6 +56,7 @@ const ServicesOverview = () => {
   ];
 
   const toggleAccordion = (index) => {
+    // Toggle the active index (if same index clicked, collapse it, otherwise expand new)
     setActiveIndex(activeIndex === index ? null : index);
   };
 
