@@ -188,6 +188,26 @@
     max-width: 48%;
     margin: 10px 0;
   }
+
+
+  /* Responsive Icon Sizes */
+@media (max-width: 1024px) {
+  .icon {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon {
+    font-size: 1.2rem;
+  }
+}
 }
 
 @media (max-width: 480px) {
@@ -228,6 +248,20 @@
   }
 }
 
+@media (max-width: 300px) {
+  .stats-section {
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-around;
+  }
+
+  .stat-card {
+    flex:  1 18%;
+    max-width: 20%;
+    margin: 5px 0;
+  }
+}
+
 /* Icon Styles */
 .icon {
   font-size: 2rem;
@@ -262,21 +296,6 @@
   color: #ffcc80;
 }
 
-/* Responsive Icon Sizes */
-@media (max-width: 1024px) {
-  .icon {
-    font-size: 1.8rem;
-  }
-}
 
-@media (max-width: 768px) {
-  .icon {
-    font-size: 1.5rem;
-  }
-}
 
-@media (max-width: 480px) {
-  .icon {
-    font-size: 1.2rem;
-  }
-}
+

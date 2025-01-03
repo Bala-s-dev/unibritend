@@ -1,0 +1,25 @@
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #0c94c6, #006aa7);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #006aa7, #5dcff8);
+  transform: scale(1.05);
+  color: white;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  background: linear-gradient(90deg, #006aa7, #5dcff8);
+}

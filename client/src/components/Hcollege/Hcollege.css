@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif; /* Default font */
-}
 
 .head {
     font-family: 'Montserrat', sans-serif; /* Clean, modern font for header */
@@ -103,7 +98,8 @@
     font-family: 'Montserrat', sans-serif; /* Clean and bold font for titles */
     font-size: 1.5rem; /* Larger font size for better impact */
     font-weight: 600; /* Slightly bold for emphasis */
-    margin-bottom: 14px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     color: #333; /* Darker color for readability */
     letter-spacing: 0.5px; /* Slight spacing for clarity */
 }
@@ -112,11 +108,12 @@
     font-family: 'Roboto', sans-serif; /* Using a more readable font for body text */
     font-size: 1.1rem; /* Slightly increased for better readability */
     color: #666; /* Soft color for the description text */
-    line-height: 1.6; /* Improved line height for better readability */
+    line-height: 1.6;
+    margin: 0px 10px; /* Improved line height for better readability */
     margin-bottom: 15px; /* Added bottom margin for space between text */
 }
 
-.container .card .content a {
+.button{
     position: relative;
     top: 15px;
     display: inline-block;
@@ -125,91 +122,19 @@
     color: white;
     font-weight: 500;
     font-size: 18px;
-    padding: 12px 24px;
+    padding: 7px 15px;
     border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: 0.3s ease;
     letter-spacing: 1px; /* Slight spacing for a more refined look */
 }
 
-.container .card .content a:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
+.button:hover {
+    transform: translateY(-5px);
+    padding: 10px 20px; /* Subtle lift on hover */
     background: linear-gradient(90deg, #0984e3, #6c5ce7); /* Reverse gradient on hover */
 }
 
-.custom-button {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 40px;
-    overflow: hidden;
-    font-weight: 600;
-    color: #fff;
-    background-color: #6c5ce7; /* Gradient base color */
-    border-radius: 40px;
-    border: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Depth effect */
-    transition: all 0.3s ease-in-out;
-}
-
-.custom-button:hover {
-    background-color: #0984e3; /* Darker blue on hover */
-    color: #fff;
-    transform: translateY(-5px); /* Slight lift on hover */
-}
-
-.custom-button:hover .button-highlight {
-    height: 100%;
-}
-
-.custom-button:hover .button-icon-right {
-    transform: translateX(12px);
-}
-
-.custom-button:hover .button-icon-left {
-    transform: translateX(0);
-}
-
-.button-highlight {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #fff;
-    transition: height 0.3s ease-in-out;
-}
-
-.button-icon-right,
-.button-icon-left {
-    position: absolute;
-    transition: transform 0.3s ease-out;
-}
-
-.button-icon-right {
-    right: 16px;
-    padding-right: 16px;
-    transform: translateX(12px);
-}
-
-.button-icon-left {
-    left: 10px;
-    padding-left: 10px;
-    transform: translateX(-12px);
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-    color: #fff; /* White icons */
-}
-
-.button-text {
-    position: relative;
-    transition: color 0.2s ease-in-out;
-    text-decoration: none;
-}
 
 @media (max-width: 480px) {
     .container .card {
@@ -224,7 +149,7 @@
 
     .container .card .content p {
         font-size: 1.3rem;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .container .card .content a {

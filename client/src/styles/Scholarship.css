@@ -1,0 +1,259 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.scholarship-funding-page {
+  padding: 0 20px;
+}
+
+.navbar {
+  background-color: #0044cc;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Intro Section */
+.intro {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-links {
+  margin-top: 15px;
+}
+
+.intro-link {
+  color: #0044cc;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.intro-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Section Titles */
+h2 {
+  color: #0044cc;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Scholarships Section */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.material-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.material-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.material-card__img-holder {
+  height: 180px;
+  background: linear-gradient(45deg, #0044cc, #007bff);
+}
+
+.material-card__body {
+  padding: 20px;
+}
+
+.material-card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.material-card__overlay {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  background-color: rgba(0, 68, 204, 0.95);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  transition: bottom 0.3s ease;
+}
+
+.material-card__overlay.visible {
+  bottom: 0;
+}
+
+.overlay__closer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay__closer h3 {
+  margin: 0;
+}
+
+.overlay__closer p {
+  cursor: pointer;
+  font-size: 22px;
+  margin: 0;
+}
+
+/* Funding Opportunities Section */
+.funding-opportunities {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #e6f7ff;
+  border: 2px solid #0044cc;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-8px);
+}
+
+.icon {
+  font-size: 28px;
+  color: #0044cc;
+  margin-bottom: 15px;
+}
+
+.grid-item strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Application Tips Section */
+.application-tips {
+  margin: 40px 0;
+  padding: 20px;
+  background: linear-gradient(90deg, #0044cc, #007bff);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.application-tips p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.application-tips ol {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.application-tips li {
+  margin-bottom: 12px;
+}
+
+.application-tips li::marker {
+  color: white;
+  font-size: 20px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0044cc;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #e0e0e0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navbar h1 {
+    font-size: 22px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .material-card__title {
+    font-size: 18px;
+  }
+
+  .material-card__body {
+    padding: 15px;
+  }
+
+  .application-tips {
+    padding: 15px;
+  }
+
+  .grid-item strong {
+    font-size: 16px;
+  }
+}

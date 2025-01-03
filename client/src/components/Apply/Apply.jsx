@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react';
-import Select from 'react-select';
 import './Apply.css';
 
-const countryOptions = [
-  { value: 'US', label: 'United States', code: '+1 ' },
-  { value: 'IN', label: 'India', code: '+91 ' },
-  { value: 'GB', label: 'United Kingdom', code: '+44 ' },
-  { value: 'CA', label: 'Canada', code: '+1 ' },
-  { value: 'AU', label: 'Australia', code: '+61 ' },
-];
 
 const Apply = () => {
   const [formData, setFormData] = useState({
@@ -109,11 +101,12 @@ const Apply = () => {
                 required
               />
               <input
-                type="text"
+                type="phone"
                 name="mobileNumber"
-                placeholder="Mobile Number"
+                placeholder="+44 Mobile Number"
                 value={formData.mobileNumber}
                 onChange={handleChange}
+                style={{WebkitBoxDecorationBreak:'none'}}
                 required
               />
               <button type="submit">APPLY NOW</button>

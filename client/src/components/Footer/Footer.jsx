@@ -1,42 +1,56 @@
-import React from "react";
-import "./Footer.css";  
-// Create and style this CSS file as per your design
+import React from 'react'
+import './Footer.css'
 
 const Footer = () => {
-  return (
-    <footer className="footer">
-      <div className="footer-icons">
-        <a href="https://www.instagram.com" >
-          <img src="./Assets/instagram.png" alt="Instagram" />
-        </a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <img src="" alt="Facebook" />
-        </a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-          <img src="twitter-icon.png" alt="Twitter" />
-        </a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <img src="linkedin-icon.png" alt="LinkedIn" />
-        </a>
-        
-      </div>
-      <div className="footer-links">
-        <a href="/accessibility">Accessibility</a>
-        <a href="/data-protection">Data protection</a>
-        <a href="/terms-of-use">Terms of use</a>
-      </div>
-      <div className="footer-bottom">
-        <hr />
-        <p>
-          2024 © Unibritind Ltd. All Rights Reserved
-          <br />
-          The United Kingdom's international organisation for cultural relations and educational opportunities.
-          <br />
-         
-        </p>
-      </div>
-    </footer>
-  );
-};
+    return (
+        <>
+            <div className="Footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 col-lg-5 col-12 ft-1">
+                            <h3><span>WALEED</span>CODES</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ea quo ex ullam laboriosam magni totam, facere eos iure voluptate.</p>
+                            <div className="footer-icons">
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-instagram"></i>
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3 col-12 ft-2">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li className="nav-item">
+                                    <a className="" href="/">Services</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/">Portfolio</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/">Contact Us</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/">Services</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/">Portfolio</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col-md-6 col-lg-4 col-12 ft-3">
+                            <h5>Quick Links</h5>
+                            <p><i class="fa-solid fa-phone-volume"></i> +92 3121324083</p>
+                            <p><i class="fa-solid fa-envelope"></i> waleedishfaq1515@gmail.com</p>
+                            <p><i class="fa-solid fa-paper-plane"></i> Abbottabad, Pakistan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='Last-footer'>
+                <p>Design By Waleed Ishfaq</p>
+            </div>
+        </>
+    )
+}
 
-export default Footer;
+export default Footer
