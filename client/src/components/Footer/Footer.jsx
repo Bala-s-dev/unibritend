@@ -1,56 +1,69 @@
-import React from 'react'
-import './Footer.css'
+import React from "react";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+import { Link } from "react-router-dom"; // Import Link for internal routing
+import "./Footer.css";
 
 const Footer = () => {
-    return (
-        <>
-            <div className="Footer">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-6 col-lg-5 col-12 ft-1">
-                            <h3><span>WALEED</span>CODES</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ea quo ex ullam laboriosam magni totam, facere eos iure voluptate.</p>
-                            <div className="footer-icons">
-                                <i class="fa-brands fa-facebook"></i>
-                                <i class="fa-brands fa-twitter"></i>
-                                <i class="fa-brands fa-instagram"></i>
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-lg-3 col-12 ft-2">
-                            <h5>Quick Links</h5>
-                            <ul>
-                                <li className="nav-item">
-                                    <a className="" href="/">Services</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Portfolio</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Contact Us</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Services</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Portfolio</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="col-md-6 col-lg-4 col-12 ft-3">
-                            <h5>Quick Links</h5>
-                            <p><i class="fa-solid fa-phone-volume"></i> +92 3121324083</p>
-                            <p><i class="fa-solid fa-envelope"></i> waleedishfaq1515@gmail.com</p>
-                            <p><i class="fa-solid fa-paper-plane"></i> Abbottabad, Pakistan.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='Last-footer'>
-                <p>Design By Waleed Ishfaq</p>
-            </div>
-        </>
-    )
-}
+ const currentYear = new Date().getFullYear();
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="contact-info">
+          <h3>Contact Us</h3>
+          <p className="contact-us">
+            <FaEnvelope /> email@example.com
+          </p>
+          <p className="contact-us">
+            <FaPhone /> +1 234 567 890
+          </p>
+        </div>
 
-export default Footer
+        <div className="social-media">
+          <h3>Follow Us</h3>
+          <div className="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaFacebook />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaTwitter />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaInstagram />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
+
+        <div className="quick-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <Link to="/about-us" className="footer-link">About Us</Link>
+            </li>
+            <li>
+              <Link to="/services" className="footer-link">Services</Link>
+            </li>
+            <li>
+              <Link to="/contact" className="footer-link">Contact</Link>
+            </li>
+            <li>
+              <Link to="/faq" className="footer-link">FAQ</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+         <h3 className="terms-condition"> <a href="">Terms & Conditions</a></h3>
+          <h4>
+            By using this website, you agree to our <Link to="/terms" className="footer-link">Terms and Conditions</Link>.
+          </h4>
+         <h3>&copy; {currentYear} Unibritend. All rights reserved.</h3>
+        </div>
+    </footer>
+  );
+};
+
+export default Footer;

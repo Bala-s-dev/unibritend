@@ -1,8 +1,7 @@
-/* AboutPage.css */
-
 .about-page {
   padding: 20px;
-  background-color: #f1f1f1; /* Soft light background for better readability */
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
 }
 
 .head-section {
@@ -10,9 +9,10 @@
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   position: relative;
-  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.4); /* Dark overlay for text visibility */
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-out;
 }
 
 .head-section h1 {
@@ -21,21 +21,37 @@
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.head-section h1:hover {
+  transform: scale(1.1);
 }
 
 .content {
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.content:hover {
+  transform: scale(1.02);
 }
 
 .section {
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.section.fade-in {
+  opacity: 1;
 }
 
 .mission,
@@ -69,7 +85,7 @@ h2 {
   content: '✔';
   position: absolute;
   left: 0;
-  color: #6c5ce7; /* Purple icon for better readability */
+  color: #6c5ce7;
 }
 
 .section p {
@@ -78,13 +94,12 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Core Values Icons */
 .section ul li strong {
   color: #333;
   font-weight: 600;
 }
 
-.section .core-values-icons {
+.core-values-icons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -94,6 +109,11 @@ h2 {
   display: flex;
   align-items: center;
   font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.core-values-icons div:hover {
+  transform: scale(1.1);
 }
 
 .core-values-icons i {
@@ -107,7 +127,6 @@ h2 {
   color: #333;
 }
 
-/* Button Styles */
 .custom-button {
   position: relative;
   display: inline-flex;
@@ -118,21 +137,12 @@ h2 {
   border-radius: 40px;
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .custom-button:hover {
   background-color: #6c5ce7;
   transform: translateY(-5px);
-}
-
-.custom-button .button-text {
-  font-size: 1.1rem;
-}
-
-.custom-button .button-text a {
-  color: white;
-  text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -146,6 +156,17 @@ h2 {
 
   .section ul li {
     font-size: 1rem;
+  }
+
+  .core-values-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .core-values-icons div {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+    text-align: center;
   }
 }
 
@@ -163,10 +184,20 @@ h2 {
   }
 
   .core-values-icons {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
   .core-values-icons div {
-    margin-bottom: 15px;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

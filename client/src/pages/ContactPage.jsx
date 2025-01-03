@@ -14,8 +14,8 @@ const ContactPage = () => {
                   <i className="fas fa-map-marked" />
                 </div>
                 <div className="contact-info-text">
-                  <h2>Address</h2>
-                  <span>1215 Lorem Ipsum, Ch 176080</span>
+                  <h2 className="address-info">Address</h2>
+                  <span className="text">1215 Lorem Ipsum, Ch 176080</span>
                   <span>Chandigarh, INDIA</span>
                 </div>
               </div>
