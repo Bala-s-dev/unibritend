@@ -20,7 +20,7 @@ class HCollege extends React.Component {
                 in a dynamic learning environment. Located in Cambridge, it provides students with
                 excellent research opportunities and career prospects.
               </p>
-              <a href="#">Visit Site</a>
+              <a href="#"  className='button'>Visit Site</a>
             </div>
           </div>
           
@@ -36,7 +36,7 @@ class HCollege extends React.Component {
                 its rigorous academics and diverse student body. The university offers world-class
                 education in a wide range of disciplines.
               </p>
-              <a href="#">Visit Site</a>
+              <a href="#"  className='button' >Visit Site</a>
             </div>
           </div>
 
@@ -52,27 +52,10 @@ class HCollege extends React.Component {
                 It provides a comprehensive selection of programs, from arts and humanities to science and
                 technology.
               </p>
-              <a href="#">Visit Site</a>
+              <a href="#" className='button'>Visit Site</a>
             </div>
           </div>
-          <span>
-            <a href="https://loadmcx.com" target="_blank" className="custom-button">
-              <span className="button-highlight"></span>
-              <span className="button-icon-right">
-                <svg
-                  className="icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </span>
-              <span className="button-icon-left"></span>
-              <span className="button-text"><Link to="/collegeList">View More</Link></span>
-            </a>
-          </span>
+          <span><a href="#"  className='button'>{`View More >`}</a></span>
 
         </div>
       </div>

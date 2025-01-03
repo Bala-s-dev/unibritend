@@ -33,10 +33,25 @@
   border-radius: 15px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   padding: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  animation: smoothEntry 0.8s ease forwards;
 }
+
+
+@keyframes smoothEntry {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 
 .service-card::before {
   content: "";
@@ -48,6 +63,7 @@
   background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
   z-index: 0;
   transition: opacity 0.5s ease;
+  
 }
 
 .service-card:hover::before {
@@ -55,7 +71,7 @@
 }
 
 .service-card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-10px) scale(1.05);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -124,15 +140,22 @@
 }
 
 /* Process List */
+/* General Section Styling */
+.services-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e6f7ff, #f0f8ff);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Process List */
 .process-list {
   margin: 15px 0;
   padding: 0;
   list-style: none;
   text-align: left;
-  animation: fadeIn 0.3s ease;
 }
 
-/* Process List with Icons */
 .process-list li {
   font-size: 1.1rem;
   font-weight: 500;
@@ -143,14 +166,50 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 1s ease forwards;
+  animation-delay: calc(var(--i) * 0.1.2s); /* Staggered animation */
 }
 
+/* Apply a variable for staggered animation */
+.process-list li:nth-child(1) {
+  --i: 1;
+}
+
+.process-list li:nth-child(2) {
+  --i: 2;
+}
+
+.process-list li:nth-child(3) {
+  --i: 3;
+}
+
+.process-list li:nth-child(4) {
+  --i: 4;
+}
+
+.process-list li:nth-child(5) {
+  --i: 5;
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Process List with Icons */
 .process-list li .process-icon {
   font-size: 1.4rem;
   color: #0073e6;
 }
-
-
 
 .process-list li::before {
   content: "✔";
@@ -159,6 +218,7 @@
   position: absolute;
   left: 0;
 }
+
 
 /* Apply Button */
 .apply-button {

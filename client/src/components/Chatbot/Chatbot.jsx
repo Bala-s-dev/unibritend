@@ -8,27 +8,30 @@ const Chatbot = () => {
   const [userInput, setUserInput] = useState('');
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isBotTyping, setIsBotTyping] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   // Function to handle user input
   const handleUserInput = (e) => setUserInput(e.target.value);
 
   // Function to simulate chatbot response
   const handleSendMessage = () => {
-    if (userInput.trim() === '') return;
 
     setMessages([...messages, { user: 'user', text: userInput }]);
     setIsBotTyping(true);
 
     let botResponse = '';
-    if (userInput.toLowerCase().includes('admission')) {
-      botResponse = 'The admission deadline for this semester is December 15th. Please apply before that!';
-    } else if (userInput.toLowerCase().includes('courses')) {
-      botResponse = 'We offer undergraduate and postgraduate courses in Computer Science, Business, Engineering, and more.';
-    } else if (userInput.toLowerCase().includes('scholarship')) {
-      botResponse = 'You can apply for various scholarships by visiting the Scholarships section on our website.';
+    const lowerCaseInput = userInput.toLowerCase();
+    if (lowerCaseInput.includes('admission')) {
+      botResponse = 'The admission deadline for the September intake is June. Visit the admissions page for details.';
+    } else if (lowerCaseInput.includes('courses')) {
+      botResponse = 'Popular courses include Business Management, Engineering, Medicine, and IT. Check our website for a full list.';
+    } else if (lowerCaseInput.includes('scholarship')) {
+      botResponse = 'Scholarship opportunities are available. Visit our Scholarships section for more details.';
+    } else if (lowerCaseInput.includes('visa')) {
+      botResponse = 'We assist with Tier 4 visa applications, including document preparation and interview coaching.';
+    } else if (lowerCaseInput.includes('contact')) {
+      botResponse = 'You can contact us via email, phone, or WhatsApp. Visit the Contact Us page for details.';
     } else {
-      botResponse = 'I’m sorry, I didn’t understand that. Could you please rephrase?';
+      botResponse = 'I’m sorry, I didn’t understand that. Could you please rephrase or choose a quick option below?';
     }
 
     setTimeout(() => {
@@ -42,11 +45,15 @@ const Chatbot = () => {
     setUserInput('');
   };
 
+  // Handle sending message when pressing Enter key
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
   // Toggle chat window visibility
   const toggleChat = () => setIsChatOpen(!isChatOpen);
-
-  // Toggle dark mode
-  const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
     <>
@@ -57,13 +64,10 @@ const Chatbot = () => {
       )}
 
       {isChatOpen && (
-        <div className={`chatbot-container ${darkMode ? 'dark' : ''}`}>
+        <div className='chatbot-container'>
           <div className="chatbot-header">
             <h3>University Guidance Chatbot</h3>
             <div>
-              <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-                {darkMode ? '☀️' : '🌙'}
-              </button>
               <button className="close-btn" onClick={toggleChat}>–</button>
             </div>
           </div>
@@ -92,6 +96,8 @@ const Chatbot = () => {
             <button onClick={() => setUserInput('Tell me about admissions')}>Admissions</button>
             <button onClick={() => setUserInput('What courses are available?')}>Courses</button>
             <button onClick={() => setUserInput('How can I apply for scholarships?')}>Scholarships</button>
+            <button onClick={() => setUserInput('Tell me about visa requirements')}>Visa Guidance</button>
+            <button onClick={() => setUserInput('How can I contact you?')}>Contact</button>
           </div>
 
           <div className="chatbot-footer">
@@ -99,6 +105,7 @@ const Chatbot = () => {
               type="text"
               value={userInput}
               onChange={handleUserInput}
+              onKeyPress={handleKeyPress} // Added this event handler
               placeholder="Type your message here..."
             />
             <button onClick={handleSendMessage}>Send</button>
