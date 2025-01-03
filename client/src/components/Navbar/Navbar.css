@@ -10,7 +10,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1000;
-    border-radius: 8px;
   }
   
   /* Logo Styling */
@@ -85,7 +84,14 @@
   .dropdown-menu li {
     margin: 10px 0;
   }
-  
+  .brand {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
   .dropdown-menu li a {
     color: #F0F4F8;
     text-decoration: none;

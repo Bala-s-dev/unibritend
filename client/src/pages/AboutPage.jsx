@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/AboutPage.css";
 
 const AboutPage = () => {
+  useEffect(() => {
+    const sections = document.querySelectorAll(".section");
+    const handleScroll = () => {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop <= window.innerHeight / 1.5) {
+          section.classList.add("fade-in");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="about-page">
       <div className="head-section">
@@ -24,6 +39,26 @@ const AboutPage = () => {
             To become a trusted global leader in educational consultancy,
             inspiring and enabling students to succeed in their academic and
             professional journeys.
+          </p>
+        </div>
+
+        <div className="section approach">
+          <h2>Our Approach</h2>
+          <p>
+            At Unibritend, we believe in a personalized approach to each student’s
+            academic journey. Our team works closely with students to understand
+            their unique needs and provide tailored advice and support, ensuring
+            they make informed decisions about their education.
+          </p>
+        </div>
+
+        <div className="section global-reach">
+          <h2>Global Reach</h2>
+          <p>
+            We have a presence across multiple countries, enabling us to provide
+            local insights and global opportunities. Our extensive network of
+            partners and alumni allows us to guide students in their international
+            academic pursuits.
           </p>
         </div>
 

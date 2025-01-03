@@ -27,32 +27,6 @@ body {
 }
 
 /* Intro Section */
-.intro {
-  text-align: center;
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-}
-
-.intro-links {
-  margin-top: 15px;
-}
-
-.intro-link {
-  color: #0044cc;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0 15px;
-  transition: color 0.3s ease;
-}
-
-.intro-link:hover {
-  color: #007bff;
-  text-decoration: underline;
-}
-
 /* Section Titles */
 h2 {
   color: #0044cc;
@@ -86,9 +60,12 @@ h2 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.material-card__img-holder {
-  height: 180px;
-  background: linear-gradient(45deg, #0044cc, #007bff);
+.material-card__img-holder img {
+  height: 200px;
+  margin: 4px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 25px;
 }
 
 .material-card__body {
@@ -119,6 +96,22 @@ h2 {
 .material-card__overlay.visible {
   bottom: 0;
 }
+.overlay-open {
+  background-color: yellow;
+  color: black; /* Text color for the '?' symbol */
+  font-size: 24px; /* Adjust the size of the '?' symbol */
+  font-weight: bold; /* Make the '?' symbol bold */
+  display: inline-block;
+  padding: 5px 10px; /* Add padding to make it more clickable */
+  border-radius: 50%; /* Circle shape */
+  cursor: pointer; /* Make it look interactive */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.overlay-open:hover {
+  background-color: orange; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
 
 .overlay__closer {
   display: flex;
@@ -147,7 +140,7 @@ h2 {
 }
 
 .grid-item {
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

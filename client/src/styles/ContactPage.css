@@ -13,10 +13,14 @@ section {
   display: inline-block;
   width: 100%;
   text-align: left;
-  margin-bottom: 40px;
   text-align: center; /* Space between contact info and form */
 }
-
+.address-info {
+  color: #ffffff;
+}
+.text {
+  color: aliceblue;
+}
 .contact-info-item {
   background: #071c34;
   padding: 30px 20px;
@@ -42,7 +46,7 @@ section {
 
 .contact-page-form input, .contact-page-form textarea {
   background: #f9f9f9;
-  border: 1px solid #071c34;
+  border: 1px solid lightskyblue;
   margin-bottom: 20px;
   padding: 12px 16px;
   width: 100%;
@@ -86,7 +90,7 @@ section {
 
 .contact-page-form .message-input textarea {
   background: #f9f9f9;
-  border: 1px solid #f9f9f9;
+  border: 1px solid  lightskyblue;
   width: 100%;
   height: 120px;
   padding: 12px 16px;
@@ -147,6 +151,8 @@ section {
 }
 
 @media (max-width: 480px) {
+
+
   .contact-page-sec {
     padding: 30px 0;
   }

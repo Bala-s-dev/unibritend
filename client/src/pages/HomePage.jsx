@@ -2,7 +2,6 @@ import React from "react";
 import Apply from "../components/Apply/Apply";
 import HeroSection from "../components/HeroSection/HeroSection";
 import ServicesOverview from "../components/ServiceOverview/ServicesOverview";
-import QuickLinks from "../components/QuickLinks/QuickLinks";
 import Hcollege from "../components/Hcollege/Hcollege"
 import Footer from "../components/Footer/Footer";
 import Testimonials from "../components/Testimonials/Testimonials";
@@ -18,7 +17,6 @@ const HomePage = () => {
       <ServicesOverview />
       <Hcollege />
       <Testimonials/>
-      <QuickLinks />
       <Chatbot/>
       <Footer />
       
