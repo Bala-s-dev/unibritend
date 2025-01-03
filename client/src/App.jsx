@@ -5,7 +5,8 @@ import ScholarshipFundingPage from "./pages/Scholarship";
 import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar/Navbar"
 // import Footer from "./components/Footer/Footer";
-import CollegeList from "./pages/CollegeList";
+import CollegeList from "./pages/Universities/CollegeList";
+
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/Scholarship" element={<ScholarshipFundingPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/collegeList" element={<CollegeList />} />
-        {/* <Route path="/collegeList/:country" element={<CollegeList />} /> */}
+        <Route path="/collegeList/:country" element={<CollegeList />} />
       </Routes>
     </Router>
   );

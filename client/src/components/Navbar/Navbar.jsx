@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-logo">
         <img src={logo} alt="Logo" className="logo" />
-        <h2>Unibritind Ltd</h2>
+        <h2 className='brand'>Unibritind Ltd</h2>
       </div>
 
       <div
@@ -51,62 +51,48 @@ const Navbar = () => {
         <li className="dropdown" onClick={toggleDropdown}>
           <Link to="#">
             Universities 
-            <FaChevronDown style={{marginLeft:'5px'}}
-              className={`dropdown-icon ${dropdownActive ? 'active' : ''}`}
-            />
+            <FaChevronDown style={{ marginLeft: "5px" }} />
           </Link>
-          <ul className={`dropdown-menu ${dropdownActive ? 'active' : ''}`}>
+          <ul className={`dropdown-menu ${dropdownActive ? "active" : ""}`}>
             <li>
-              <Link to="/collegeList/uk" onClick={() => setMenuActive(false)}>
+              <Link to="/collegeList" onClick={() => setDropdownActive(false)}>
+                All Universities
+              </Link>
+            </li>
+            <li>
+              <Link to="/collegeList/UK" onClick={() => setDropdownActive(false)}>
                 UK
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/usa" onClick={() => setMenuActive(false)}>
+              <Link to="/collegeList/USA" onClick={() => setDropdownActive(false)}>
                 USA
               </Link>
             </li>
             <li>
-              <Link
-                to="/collegeList/canada"
-                onClick={() => setMenuActive(false)}
-              >
-                Canada
+              <Link to="/collegeList/Canada" onClick={() => setDropdownActive(false)}>
+              Canada
               </Link>
             </li>
-            <li className="sub-dropdown" onClick={toggleSubDropdown}>
-              <li>
-                <Link
-                  to="/collegeList/australia"
-                  onClick={() => setMenuActive(false)}
-                >
-                  Australia
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/collegeList/new-zealand"
-                  onClick={() => setMenuActive(false)}
-                >
-                  New Zealand
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/collegeList/ireland"
-                  onClick={() => setMenuActive(false)}
-                >
-                  Ireland
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/collegeList/germany"
-                  onClick={() => setMenuActive(false)}
-                >
-                  Germany
-                </Link>
-              </li>
+            <li>
+              <Link to="/collegeList/Australia" onClick={() => setDropdownActive(false)}>
+              Australia
+              </Link>
+            </li>
+            <li>
+              <Link to="/collegeList/NewZealand" onClick={() => setDropdownActive(false)}>
+              NewZealand
+              </Link>
+            </li>
+            <li>
+              <Link to="/collegeList/Ireland" onClick={() => setDropdownActive(false)}>
+              Ireland
+              </Link>
+            </li>
+            <li>
+              <Link to="/collegeList/Germany" onClick={() => setDropdownActive(false)}>
+              Germany
+              </Link>
             </li>
           </ul>
         </li>

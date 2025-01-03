@@ -85,7 +85,14 @@
   .dropdown-menu li {
     margin: 10px 0;
   }
-  
+  .brand {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
   .dropdown-menu li a {
     color: #F0F4F8;
     text-decoration: none;
