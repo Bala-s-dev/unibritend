@@ -55,7 +55,7 @@ class HCollege extends React.Component {
               <a href="#" className='button'>Visit Site</a>
             </div>
           </div>
-          <span><Link to="/CollegeList" className='button' > View More > </Link></span>
+          <span><Link to="/CollegeList" className='button' > {`View More >`} </Link></span>
 
         </div>
       </div>
