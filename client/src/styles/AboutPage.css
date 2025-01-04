@@ -32,6 +32,7 @@
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -75,7 +76,7 @@ h2 {
 }
 
 .section ul li {
-  font-size: 1.1rem;
+  font-size: 14px;
   margin-bottom: 15px;
   padding-left: 20px;
   position: relative;
@@ -89,7 +90,7 @@ h2 {
 }
 
 .section p {
-  font-size: 1.1rem;
+  font-size: 14px;
   color: #555;
   margin-bottom: 20px;
 }
@@ -124,6 +125,7 @@ h2 {
 
 .core-values-icons span {
   font-weight: bold;
+  font-size: small;
   color: #333;
 }
 
@@ -176,11 +178,14 @@ h2 {
   }
 
   .section h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+  .section p {
+    font-size: small;
   }
 
   .section ul li {
-    font-size: 0.9rem;
+    font-size: small;
   }
 
   .core-values-icons {

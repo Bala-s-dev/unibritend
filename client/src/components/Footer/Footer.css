@@ -1,7 +1,7 @@
 .footer {
   background-color: #2d3436;
   color: #fff;
-  padding: 40px 20px;
+  padding: 20px 30px;
   font-family: 'Arial', sans-serif;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   flex-wrap: wrap;
   gap: 40px;
 }
@@ -26,7 +26,7 @@
 }
 .contact-info h3, .social-media h3, .quick-links h3 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   font-weight: 600;
   color: #fff;
 }
@@ -89,7 +89,7 @@
   text-align: center;
   font-size: 1rem;
   color: #b2bec3;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .footer-bottom p {
@@ -115,7 +115,7 @@
 
   .contact-info, .social-media, .quick-links{
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .social-icons {
@@ -134,7 +134,7 @@
 
 @media (max-width: 480px) {
   .footer {
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
 
   .footer-bottom {

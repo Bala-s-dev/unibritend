@@ -6,6 +6,7 @@ import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar/Navbar"
 // import Footer from "./components/Footer/Footer";
 import CollegeList from "./pages/Universities/CollegeList";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -20,7 +21,9 @@ function App() {
         <Route path="/collegeList" element={<CollegeList />} />
         <Route path="/collegeList/:country" element={<CollegeList />} />
       </Routes>
+      <Footer/>
     </Router>
+    
   );
 }
 
