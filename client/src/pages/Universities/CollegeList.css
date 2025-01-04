@@ -318,7 +318,7 @@ body {
 
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 350px) {
   html {
     font-size: 62.5%; /* Adjusting base font size for smaller screens */
   }
