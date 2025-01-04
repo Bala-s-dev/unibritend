@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa'; // Importing the dropdown icon from react-icons
 import './Navbar.css';
-import logo from '../../Assets/logo.jpg';
+import logo from "../../Assets/unibrit.png"
 
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [dropdownActive, setDropdownActive] = useState(false);
-  const [subDropdownActive, setSubDropdownActive] = useState(false);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -17,15 +16,11 @@ const Navbar = () => {
     setDropdownActive(!dropdownActive);
   };
 
-  const toggleSubDropdown = () => {
-    setSubDropdownActive(!subDropdownActive);
-  };
-
   return (
     <nav className="navbar">
       <div className="nav-logo">
         <img src={logo} alt="Logo" className="logo" />
-        <h2 className='brand'>Unibritind Ltd</h2>
+        <h2 className='brand'>𝐔𝐍𝐈𝐁𝐑𝐈𝐓𝐄𝐍𝐃 </h2>
       </div>
 
       <div
@@ -55,42 +50,42 @@ const Navbar = () => {
           </Link>
           <ul className={`dropdown-menu ${dropdownActive ? "active" : ""}`}>
             <li>
-              <Link to="/CollegeList" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
                 All Universities
               </Link>
             </li>
             <li>
-              <Link to="/CollegeList/UK" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/UK" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
                 UK
               </Link>
             </li>
             <li>
-              <Link to="/CollegeList/USA" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/USA" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
                 USA
               </Link>
             </li>
             <li>
-              <Link to="/CollegeList/Canada" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Canada" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
               Canada
               </Link>
             </li>
             <li>
-              <Link to="/CollegeList/Australia" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Australia" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
               Australia
               </Link>
             </li>
             <li>
-              <Link to="/CollegeList/NewZealand" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/NewZealand" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
               NewZealand
               </Link>
             </li>
             <li>
-              <Link to="/CollegeList/Ireland" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Ireland" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
               Ireland
               </Link>
             </li>
             <li>
-              <Link to="/CollegeList/Germany" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Germany" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
               Germany
               </Link>
             </li>

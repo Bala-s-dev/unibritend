@@ -21,15 +21,12 @@
   .logo {
     width: 60px;
     height: auto;
-    clip-path: circle(28%);
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+    margin: 20px;
+    clip-path: circle(43%);
+    border: 2px solid blue;
   }
   
-  .logo:hover {
-    transform: scale(1.1);
-    filter: brightness(1.15);
-  }
+  
   
   /* Navigation Menu Styling */
   .nav-menu {
@@ -86,6 +83,7 @@
   }
   .brand {
     color: white;
+    letter-spacing: 0.5vi;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: x-large;
     justify-content: center;

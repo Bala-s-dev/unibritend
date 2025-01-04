@@ -14,10 +14,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.chatbot-container.dark {
-  background: #2c2c2c;
-  color: #fff;
-}
 
 /* Header Styles */
 .chatbot-header {
@@ -32,22 +28,14 @@
 }
 
 .chatbot-header h3 {
-  font-size: 1.2rem;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.4rem;
   margin: 0;
 }
 
-.dark-mode-toggle, .close-btn {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-left: 10px;
-}
 
-.dark-mode-toggle:hover, .close-btn:hover {
-  color: #ffd700;
-}
+
 
 /* Body Styles */
 .chatbot-body {
@@ -67,6 +55,7 @@
   border-radius: 8px;
   max-width: 80%;
   word-wrap: break-word;
+  
 }
 
 .message.user {
@@ -127,7 +116,7 @@
   border: none;
   border-radius: 5px;
   padding: 8px 12px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
   margin: 5px;
@@ -135,17 +124,13 @@
 
 .quick-replies button:hover {
   background: #007acc;
-  transform: translateY(-3px);
 }
 
 .chatbot-container.dark .quick-replies {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.chatbot-container.dark .quick-replies button {
-  background: #ffd700;
-  color: #333;
-}
+
 
 /* Footer Styles */
 .chatbot-footer {
@@ -160,7 +145,7 @@
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .chatbot-footer button {
@@ -180,7 +165,7 @@
   transform: translateY(-3px);
 }
 
-.chatbot-container.dark .chatbot-footer {
+ .chatbot-footer {
   background: rgba(255, 255, 255, 0.1);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }

@@ -1,6 +1,7 @@
 import { CollegeData } from './CollegeData';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import {FaSearch} from 'react-icons/fa'
 import './CollegeList.css';
 
 const CollegeList = () => {
@@ -28,6 +29,7 @@ const CollegeList = () => {
           className="search-input"
           aria-label="Search for a college"
         />
+        <FaSearch style={{height:'20px', width:'20px'}}/>
       </div>
 
       <main className="main">
@@ -48,7 +50,7 @@ const CollegeList = () => {
                           <p className="cname">{college.name}</p>
                         </div>
                         <div className="card-front__bt">
-                          <p className="card-front-head">View Details</p>
+                          <p className="card-btn">View Details</p>
                         </div>
                       </div>
                       <div className="card-back">
@@ -80,7 +82,7 @@ const CollegeList = () => {
                         href={college.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inside-page__btn"
+                        className="card-btn"
                       >
                         Visit Site
                       </a>

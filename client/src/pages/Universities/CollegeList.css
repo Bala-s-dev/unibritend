@@ -5,16 +5,15 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-body{
-  padding-top: 75px;
+  
 }
 
 .search-container{
   width: max-content;
-  display: block;
+  display: flex;
   margin: 0 auto;
+  align-items: center;
+
 }
 
 .search-input{
@@ -52,7 +51,8 @@ html { font-size: 70.5%; }
 body {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  position: relative;
+  background-color: #f7faff;
+  border: none;
  
 }
 .main {
@@ -60,13 +60,14 @@ body {
   flex-direction: column;
   justify-content: center;
  
+ 
 }
 
 
 .cname {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #333;
-  font-size: 14px;
+  font-size: 13px;
   margin: 5px;
   padding: 5px;
   text-align: center;
@@ -78,7 +79,7 @@ body {
 
 .college-name
  {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   margin-top: .2rem;
   margin-bottom: 0px;
@@ -87,21 +88,22 @@ body {
 }
 
 
-.card-front-head {
+.card-btn {
   position: relative;
   display: inline-block;
   text-decoration: none;
   background: linear-gradient(90deg, #6c5ce7, #0984e3); /* Gradient from purple to blue */
   color: white;
   font-weight: 500;
-  font-size: 16px;
-  padding: 7px 15px;
+  font-size: 11px;
+  padding: 5px 10px;
   border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   transition: 0.3s ease;
   letter-spacing: 1px;
+  margin-top: 0px;
 }
-.card-front-head:hover {
+.card-btn:hover {
   transform: translateY(-5px);
   padding: 10px 20px; /* Subtle lift on hover */
   background: linear-gradient(90deg, #0984e3, #6c5ce7); /* Reverse gradient on hover */
@@ -121,52 +123,11 @@ body {
   margin: auto;
 }
 
-/* Buttons =================================================*/
-
-.inside-page__btn {
-  background-color: transparent;
-  border: 3px solid;
-  border-radius: .5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  padding: .7rem .75rem;
-  position: relative;
-  text-decoration: none;
-  transition: all .3s ease;
-  width: 90%;
-  z-index: 10;
-  
-  
-
-}
-
-.inside-page__btn::before { 
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: scaleY(0);
-  transition: all .3s ease;
-  width: 100%;
-  z-index: -1;
-}
-
-.inside-page__btn { 
-  border-color: lightblue;
-  color: blue;
-}
-
-.inside-page__btn:hover { 
-  background-color:lightblue;
-}
-
 
 /* Container to hold all cards in one place */
 .card-area {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); /* Improved responsiveness */
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); /* Improved responsiveness */
   gap: 1rem;
   padding: 1rem;
 }
@@ -177,7 +138,7 @@ body {
   padding: 30px;
   margin-bottom: 20px;
   display: flex;
-
+  background-color: #f7faff;
   height: 100%;
   justify-content: center;
   width: 100%;
@@ -187,28 +148,23 @@ body {
 .card {
   background-color: rgba(0, 0, 0, .05);
   box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
-  height: 20rem;
+  height: 19rem;
   position: relative;
   transition: all 1s ease;
-  width: 20rem;
+  width: 19rem;
 }
 
-/* Flip card - covering both the front and inside front page */
-
-/* An outer container to hold the flip card. This excludes the inside page */
 .flip-card {
-  height: 20rem;
+  height: 19rem;
   perspective: 100rem;
   position: absolute;
   right: 0;
   transition: all 1s ease;
   visibility: hidden;
-  width: 20rem;
+  width: 19rem;
   z-index: 100;
 }
 
-/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
-/* This is done so content in the inside page can be selected */
 .flip-card > * {
   visibility: visible;
 }
@@ -227,12 +183,7 @@ body {
 .card-front,
 .card-back {
   backface-visibility: hidden;
-  height: 100%;
-  left: 0;
   position: absolute;
-  top: 0;
-  width: 100%;
-  border-radius: 10px;
 }
 
 /* Styling for the front side of the flip card */
@@ -240,15 +191,33 @@ body {
 /* container for the front side */
 .card-front {
   background-color: #fff;
-  height: 20rem;
-  width: 20rem;
+  height: 19rem;
+  width: 19rem;
   border-radius: 10px;
 }
 
+.card-back {
+  background-color: #fff;
+  height: 19rem;
+  width: 19rem;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}
+.inside-page {
+  background-color: #fff;
+  height: 19rem;
+  width: 19rem;
+  box-shadow: inset 19rem 0px 5rem -2.5rem rgba(0,0,0,0.25);
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  z-index: 1;
+  border-radius: 10px;
+}
 /* Front side's top section */
 .card-front__tp {
   align-items: center;
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -266,13 +235,7 @@ body {
   justify-content: center;
 }
 
-/* Styling for the back side of the flip card */
-
-.card-back {
-  background-color: #fafbfa;
-  transform: rotateY(180deg);
-  border-radius: 10px;
-}
+/* Styling for the back side of the flip card *
 
 /* Specifically targeting the <video> element */
 .video__container {
@@ -283,20 +246,6 @@ body {
   width: 100%;
 }
 
-/* Inside page */
-
-.inside-page {
-  background-color: #fafbfa;
-  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0,0,0,0.25);
-  height: 100%;
-  padding: 1rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  width: 20rem;
-  z-index: 1;
-   border-radius: 10px;
-}
 
 .inside-page__container {
   align-items: center;
@@ -328,20 +277,7 @@ body {
   box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0,0,0,0.1);
 }
 
-/* Footer ====================================*/
 
-.footer {
-  background-color: #333;
-   margin-top: 3rem;
-  padding: 1rem 0;
-  width: 100%;
-}
-
-.footer-text {
-  color: #fff;
-  font-size: 1.2rem;
-  text-align: center;
-}
 
 /* Responsive Design */
 @media only screen and (min-width: 1200px) {
@@ -350,7 +286,7 @@ body {
   }
 }
 
-.card-front-head {
+.card-btn {
   font-size: small;
 }
 
@@ -366,7 +302,7 @@ body {
   .college-name {
     font-size: 13px;
   }
-  .card-front-head {
+  .card-btn {
     font-size: smaller;
   }
   .college-desc {
@@ -374,40 +310,28 @@ body {
     font-size: 11px;
     margin: auto;
   }
-  .flip-card,
+  .flip-card,.card-front,.card-back,
   .inside-page {
-    width: 16rem;
-    height: 16rem;
+    width: 18.7rem;
+    height: 18.7rem;
   }
 
-  .inside-page__btn {
-    font-size: 0.5rem;
-    padding: 0.3rem 0.4rem;
-  }
-
-  .footer {
-    font-size: 1rem;
-  }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 400px) {
   html {
     font-size: 62.5%; /* Adjusting base font size for smaller screens */
   }
 
-  .card {
-    width: 14rem;
-    height: 14rem;
-  }
-
-  .card-front-head {
+  .card-btn {
     font-size: smaller;
     padding: 7px;
   }
 
   .cname {
-    font-size: 13px;
-    padding-bottom: 2px;
+    font-size: 10px;
+    margin-top: 0px;
+    padding-bottom: 0px;
   }
   .college-desc {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -415,19 +339,9 @@ body {
     margin: auto;
   }
   .flip-card,
-  .inside-page {
-    width: 14rem;
-    height: 14rem;
-  }
-
-  .inside-page__btn {
-    font-size: 0.5rem;
-    padding: 0.3rem 0.4rem;
-  }
-
-  .footer {
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
+  .inside-page,.card-front,.card-back {
+    width: 12rem;
+    height: 12rem;
   }
 
   .college-name {

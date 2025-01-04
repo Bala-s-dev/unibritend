@@ -238,18 +238,7 @@ const scholarships = [
         </ol>
       </section>
 
-      <footer className="footer">
-        <img src="https://example.com/footer-image.jpg" alt="Footer" className="section-image" />
-        <p>© 2025 Scholarships & Funding. All rights reserved.</p>
-        <div className="footer-links">
-          <a href="https://example.com/contact" target="_blank" rel="noopener noreferrer">
-            Contact Us
-          </a>
-          <a href="https://example.com/privacy" target="_blank" rel="noopener noreferrer">
-            Privacy Policy
-          </a>
-        </div>
-      </footer>
+      
     </div>
   );
 };
