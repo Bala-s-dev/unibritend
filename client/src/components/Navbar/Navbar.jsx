@@ -55,42 +55,42 @@ const Navbar = () => {
           </Link>
           <ul className={`dropdown-menu ${dropdownActive ? "active" : ""}`}>
             <li>
-              <Link to="/collegeList" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList" onClick={() => setDropdownActive(false)}>
                 All Universities
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/UK" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/UK" onClick={() => setDropdownActive(false)}>
                 UK
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/USA" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/USA" onClick={() => setDropdownActive(false)}>
                 USA
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/Canada" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Canada" onClick={() => setDropdownActive(false)}>
               Canada
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/Australia" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Australia" onClick={() => setDropdownActive(false)}>
               Australia
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/NewZealand" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/NewZealand" onClick={() => setDropdownActive(false)}>
               NewZealand
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/Ireland" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Ireland" onClick={() => setDropdownActive(false)}>
               Ireland
               </Link>
             </li>
             <li>
-              <Link to="/collegeList/Germany" onClick={() => setDropdownActive(false)}>
+              <Link to="/CollegeList/Germany" onClick={() => setDropdownActive(false)}>
               Germany
               </Link>
             </li>
