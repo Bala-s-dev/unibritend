@@ -1,4 +1,4 @@
-import { collegeData } from './collegeData';
+import { CollegeData } from './collegeData';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './CollegeList.css';
@@ -8,7 +8,7 @@ const CollegeList = () => {
   const { country } = useParams(); // Get country parameter from the route
 
   // Get colleges for the selected country
-  const colleges = country ? collegeData[country] : Object.values(collegeData).flat();
+  const colleges = country ? CollegeData[country] : Object.values(CollegeData).flat();
 
   // Safely filter colleges
   const filteredColleges = colleges.filter(

@@ -4,7 +4,7 @@ import { IoIosQuote } from "react-icons/io";
 import { AiOutlineStar } from "react-icons/ai";
 
 const ClientSlider = (props) => {
-  const { name, img, stars, disc } = props.item;
+  const { name, imageFile, stars, disc } = props.item;
 
   return (
     <Container>
@@ -23,11 +23,12 @@ const ClientSlider = (props) => {
         </div>
       </Header>
       <Body>{disc}</Body>
-      <Footer>
-        <img src={img} alt={name} />
-        <div className="details">
-          <h1>{name}</h1>
-        </div>
+      <Footer> 
+      {typeof imageFile === 'string' ? (
+        <img src={imageFile} alt={name} />
+      ) : (
+        imageFile
+      )}
       </Footer>
     </Container>
   );

@@ -1,29 +1,30 @@
-import React, { useRef, useState } from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
-import ClientSlider from "./ClientSlider";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { Slide } from "react-awesome-reveal";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { AiOutlineStar } from "react-icons/ai";
+import React, { useRef, useState } from 'react';
+import Slider from 'react-slick';
+import styled from 'styled-components';
+import ClientSlider from './ClientSlider';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { Slide } from 'react-awesome-reveal';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { AiOutlineStar } from 'react-icons/ai';
+import { CgProfile } from 'react-icons/cg';
 
 const clients = [
   {
-    name: "John Michel",
-    img: "",
+    name: 'John Michel',
+    imageFile: '../../Assets/funding-image.jpg',
     stars: 3,
     disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
   },
   {
-    name: "Jane Doe",
-    img: "",
+    name: 'Jane Doe',
+    imageFile: null,
     stars: 4,
     disc: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
   },
   {
-    name: "Robert Smith",
-    img: "",
+    name: 'Robert Smith',
+    imageFile: null,
     stars: 5,
     disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
   },
@@ -48,13 +49,17 @@ const Clients = () => {
   const [testimonials, setTestimonials] = useState(clients);
   const [formVisible, setFormVisible] = useState(false);
 
-  const addTestimonial = (name, img, stars, disc) => {
+  const addTestimonial = (name, imageFile, stars, disc) => {
+    const defaultImage = <CgProfile style={{
+    width: '4rem',
+    height: '4rem',
+     }} />;
     setTestimonials([
       ...testimonials,
-      { name, img, stars, disc },
+      { name, imageFile: imageFile || defaultImage, stars, disc },
     ]);
   };
-
+  
   return (
     <Container id="client">
       <Slide direction="left">
@@ -86,14 +91,14 @@ const Clients = () => {
 };
 
 const TestimonialForm = ({ addTestimonial }) => {
-  const [name, setName] = useState("");
-  const [img, setImg] = useState("");
+  const [name, setName] = useState('');
+
   const [stars, setStars] = useState(1);
-  const [disc, setDisc] = useState("");
-  const [imageFile, setImageFile] = useState(null);
+  const [disc, setDisc] = useState('');
+  const [imageFile, setImageFile] = useState('');
 
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files[0]; 
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -106,10 +111,9 @@ const TestimonialForm = ({ addTestimonial }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addTestimonial(name, imageFile, stars, disc);
-    setName("");
-    setImg("");
+    setName('');
     setStars(1);
-    setDisc("");
+    setDisc('');
     setImageFile(null);
   };
 
@@ -123,19 +127,31 @@ const TestimonialForm = ({ addTestimonial }) => {
         onChange={(e) => setName(e.target.value)}
         required
       />
-      <div className="file-upload">
-        <label>Upload Image</label>
-        <input type="file" accept="image/*" onChange={handleImageChange} />
-        {imageFile && <img src={imageFile} alt="Uploaded Preview" />}
-      </div>
+
+      <label htmlFor="image-upload">
+        {imageFile ? (
+          <img src={imageFile} alt="Preview" />
+        ) : (
+          <CgProfile size={100} color="#61DBFB" /> // Display React icon if no image uploaded
+        )}
+        <br />
+        Profile Photo
+      </label>
+      <input
+        type="file"
+        id="image-upload"
+        onChange={handleImageChange}
+        accept="image/*"
+      />
+
       <div className="rating">
         <label>Rating: </label>
         {[1, 2, 3, 4, 5].map((star) => (
           <AiOutlineStar
             key={star}
             onClick={() => setStars(star)}
-            color={star <= stars ? "#ffcd3c" : "#ddd"}
-            style={{ cursor: "pointer" }}
+            color={star <= stars ? '#ffcd3c' : '#ddd'}
+            style={{ cursor: 'pointer' }}
           />
         ))}
       </div>
@@ -158,7 +174,7 @@ const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding: 4rem 0;
-  
+
   @media (max-width: 840px) {
     width: 90%;
   }
@@ -173,6 +189,35 @@ const Container = styled.div`
     text-transform: capitalize;
   }
 `;
+
+const AddButton = styled.button`
+  padding: 1rem 1rem;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #01be96;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: #019d7f;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    background-color: #017f66;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  display: block;
+  margin: 4rem auto;
+  text-align: center;
+`
 
 const Testimonials = styled.div`
   margin-top: 2rem;
@@ -199,85 +244,134 @@ const Buttons = styled.div`
   }
 `;
 
-const AddButton = styled.button`
-  padding: 0.8rem 1.5rem;
-  font-size: 1.2rem;
-  background-color: #01be96;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 2rem;
-  display: block;
-  width: 100%;
-  text-align: center;
-
-  &:hover {
-    background-color: #019d7f;
-  }
-`;
-
 const Form = styled.form`
   margin-top: 2rem;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 600px;
   margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-align: center;
+    color: #333;
   }
 
   input,
   textarea {
     padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      border-color: #01be96;
+      box-shadow: 0 0 5px rgba(1, 190, 150, 0.5);
+      outline: none;
+    }
+  }
+
+  const ImageUpload = styled.div
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  label {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    text-align: center;
   }
 
-  .file-upload {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    input[type="file"] {
-      margin: 0.5rem 0;
-    }
-
-    img {
-      max-width: 100px;
-      max-height: 100px;
-      margin-top: 1rem;
-      object-fit: cover;
-      border-radius: 5px;
-    }
+  input[type="file"] {
+    display: none;
   }
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+;
 
   .rating {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    justify-content: center;
+
+    label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #666;
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
   }
 
   button {
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     background-color: #01be96;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     align-self: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background-color: #019d7f;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      background-color: #017f66;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
   }
 
-  button:hover {
-    background-color: #019d7f;
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    gap: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    button {
+      font-size: 1rem;
+    }
   }
 `;
+
+;
+
