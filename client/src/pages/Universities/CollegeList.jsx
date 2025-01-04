@@ -1,4 +1,4 @@
-import { CollegeData } from './collegeData';
+import { CollegeData } from './CollegeData';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './CollegeList.css';
