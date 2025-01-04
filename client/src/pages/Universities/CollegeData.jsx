@@ -1,4 +1,4 @@
-export const collegeData = {
+export const CollegeData = {
 UK : [
     { name: "Anglia Ruskin University", location: "Cambridge, England", website: "https://aru.ac.uk" },
     { name: "Bangor University", location: "Bangor, Wales", website: "https://www.bangor.ac.uk" },
