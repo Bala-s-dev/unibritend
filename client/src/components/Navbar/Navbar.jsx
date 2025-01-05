@@ -103,11 +103,11 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/Apply"
+            to="/form"
             className="btn"
             onClick={() => setMenuActive(false)}
           >
-            Apply
+            Apply Now
           </Link>
         </li>
       </ul>

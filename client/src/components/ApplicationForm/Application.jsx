@@ -5,7 +5,7 @@ const Form = () => {
   return (
     <div className="form-container">
       <div className="info-section">
-        <h1>Unbritind Ltd</h1>
+        <h1>𝐔𝐍𝐈𝐁𝐑𝐈𝐓𝐄𝐍𝐃 </h1>
         <h2>Build Your Dream Education Journey with Us</h2>
         <p>We give the best education opportunities in the UK to Indian students</p>
         <ul>
