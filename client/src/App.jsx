@@ -4,7 +4,7 @@ import AboutPage from "./pages/AboutPage";
 import ScholarshipFundingPage from "./pages/Scholarship";
 import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar/Navbar"
-// import Footer from "./components/Footer/Footer";
+import ApplicationForm from "./components/ApplicationForm/Application";
 import CollegeList from "./pages/Universities/CollegeList";
 import Footer from "./components/Footer/Footer";
 
@@ -20,6 +20,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/collegeList" element={<CollegeList />} />
         <Route path="/collegeList/:country" element={<CollegeList />} />
+        <Route path="/form" element={<ApplicationForm />} />
       </Routes>
       <Footer/>
     </Router>
