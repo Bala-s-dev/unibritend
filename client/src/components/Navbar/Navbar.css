@@ -83,13 +83,12 @@
   }
   .brand {
     color: white;
-    letter-spacing: 0.3vi;
+    letter-spacing: 0.1vi;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: x-large;
+    font-weight: bold;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    display: flex;
   }
   .dropdown-menu li a {
     color: #F0F4F8;
@@ -210,4 +209,3 @@
   }
   
   }
-  
