@@ -1,7 +1,7 @@
 export const CollegeData = {
 UK : [
-    { name: "Anglia Ruskin University", location: "Cambridge, England", website: "https://aru.ac.uk" },
-    { name: "Bangor University", location: "Bangor, Wales", website: "https://www.bangor.ac.uk" },
+    { img:'https://www.britishcouncil.or.th/sites/default/files/anglia_ruskin_university.jpg',name: "Anglia Ruskin University", location: "Cambridge, England", website: "https://aru.ac.uk" },
+    { img:'https://www.thecompleteuniversityguide.co.uk/commimg-cug/myhotcourses/institution/profile/image/myhc_327725_1106px.jpg', name: "Bangor University", location: "Bangor, Wales", website: "https://www.bangor.ac.uk" },
     { name: "Birkbeck University of London", location: "London, England", website: "https://www.bbk.ac.uk" },
     { name: "Birmingham City University", location: "Birmingham, England", website: "https://www.bcu.ac.uk" },
     { name: "Bournemouth University", location: "Bournemouth, England", website: "https://www.bournemouth.ac.uk" },
