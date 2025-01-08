@@ -31,7 +31,7 @@ const HeroSection = () => {
         <h1 key={currentMessage} className="hero-text">
           {messages[currentMessage]}
         </h1>
-        <p>Discover endless possibilities with Unibritind Ltd.</p>
+        <p>Discover endless possibilities with Unibritindglobal Ltd.</p>
         <div className="hero-buttons">
           <button className="hero-button primary">Get Started</button>
           <button className="hero-button secondary">Learn More</button>
