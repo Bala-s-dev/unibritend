@@ -50,11 +50,6 @@ const Navbar = () => {
           </Link>
           <ul className={`dropdown-menu ${dropdownActive ? "active" : ""}`}>
             <li>
-              <Link to="/CollegeList" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
-                All Universities
-              </Link>
-            </li>
-            <li>
               <Link to="/CollegeList/UK" onClick={() => {setDropdownActive(false); setMenuActive(false)}}>
                 UK
               </Link>
