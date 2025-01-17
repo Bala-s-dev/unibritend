@@ -1,4 +1,8 @@
-export const CollegeData = {
+import { db } from "../../config/firebase";
+import { doc, setDoc } from "firebase/firestore";
+
+export const addCollegeData = async () => {
+const CollegeData = {
 UK : [
     { img:'https://www.britishcouncil.or.th/sites/default/files/anglia_ruskin_university.jpg',name: "Anglia Ruskin University", location: "Cambridge, England", website: "https://aru.ac.uk" },
     { img:'https://www.thecompleteuniversityguide.co.uk/commimg-cug/myhotcourses/institution/profile/image/myhc_327725_1106px.jpg', name: "Bangor University", location: "Bangor, Wales", website: "https://www.bangor.ac.uk" },
@@ -225,4 +229,15 @@ UK : [
     { name: "Karlsruhe Institute of Technology (KIT)", location: "Karlsruhe, Germany", website: "https://www.kit.edu" },
   ],
 };
-  
+
+try {
+  for (const [country, colleges] of Object.entries(CollegeData)) {
+    await setDoc(doc(db, "college", country), { colleges });
+    console.log(`Added data for ${country}`);
+  }
+  console.log("All data added successfully!");
+} catch (error) {
+  console.error("Error adding data:", error);
+}
+};
+
