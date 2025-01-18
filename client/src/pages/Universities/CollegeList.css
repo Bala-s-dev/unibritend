@@ -318,18 +318,18 @@ body {
 
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 390px) {
   html {
     font-size: 62.5%; /* Adjusting base font size for smaller screens */
   }
 
   .card-btn {
     font-size: smaller;
-    padding: 7px;
+    padding: 5px;
   }
 
   .cname {
-    font-size: 10px;
+    font-size: 7px;
     margin-top: 0px;
     padding-bottom: 0px;
   }
@@ -340,12 +340,12 @@ body {
   }
   .flip-card,
   .inside-page,.card-front,.card-back {
-    width: 12rem;
-    height: 12rem;
+    width: 16rem;
+    height: 16rem;
   }
 
   .college-name {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   

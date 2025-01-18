@@ -147,11 +147,14 @@
         width: 240px;
         border-radius: 10px;
     }
-
-    .container .card .content p {
-        font-size: 1.2rem;
-        margin-top: 10px;
+    .container .card .content h2 {
+        margin-bottom: 15px;
     }
+    .container .card .content p {
+        font-size: 1.1rem;
+        margin-top: 5px;
+    }
+    
 
     .container .card .content a {
         font-size: 0.9rem;
