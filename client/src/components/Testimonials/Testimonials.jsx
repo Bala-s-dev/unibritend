@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import ClientSlider from './ClientSlider';
@@ -8,27 +8,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { AiOutlineStar } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
-
-const clients = [
-  {
-    name: 'John Michel',
-    imageFile: '../../Assets/funding-image.jpg',
-    stars: 3,
-    disc: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
-  },
-  {
-    name: 'Jane Doe',
-    imageFile: null,
-    stars: 4,
-    disc: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
-  },
-  {
-    name: 'Robert Smith',
-    imageFile: null,
-    stars: 5,
-    disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`,
-  },
-];
+import { db } from '../../config/firebase'; // Import Firebase configuration
+import {
+  collection,
+  getDocs,
+  addDoc,
+  onSnapshot,
+} from 'firebase/firestore';
 
 const settings = {
   dots: true,
@@ -46,20 +32,43 @@ const settings = {
 
 const Clients = () => {
   const arrowRef = useRef(null);
-  const [testimonials, setTestimonials] = useState(clients);
+  const [testimonials, setTestimonials] = useState([]);
   const [formVisible, setFormVisible] = useState(false);
 
-  const addTestimonial = (name, imageFile, stars, disc) => {
-    const defaultImage = <CgProfile style={{
-    width: '4rem',
-    height: '4rem',
-     }} />;
-    setTestimonials([
-      ...testimonials,
-      { name, imageFile: imageFile || defaultImage, stars, disc },
-    ]);
+  // Fetch testimonials from Firebase
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      collection(db, 'testimonials'),
+      (snapshot) => {
+        const fetchedTestimonials = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTestimonials(fetchedTestimonials);
+      }
+    );
+
+    return () => unsubscribe();
+  }, []);
+
+  // Add a new testimonial to Firebase
+  const addTestimonial = async (name, imageFile, stars, disc) => {
+    const defaultImage = null; // Placeholder for default image
+    const testimonial = {
+      name,
+      imageFile: imageFile || defaultImage,
+      stars,
+      disc,
+      timestamp: Date.now(),
+    };
+
+    try {
+      await addDoc(collection(db, 'testimonials'), testimonial);
+    } catch (error) {
+      console.error('Error adding testimonial: ', error);
+    }
   };
-  
+
   return (
     <Container id="client">
       <Slide direction="left">
@@ -68,7 +77,7 @@ const Clients = () => {
       <Testimonials>
         <Slider ref={arrowRef} {...settings}>
           {testimonials.map((item, i) => (
-            <ClientSlider item={item} key={i} />
+            <ClientSlider item={item} key={item.id} />
           ))}
         </Slider>
         <Buttons>
@@ -92,13 +101,12 @@ const Clients = () => {
 
 const TestimonialForm = ({ addTestimonial }) => {
   const [name, setName] = useState('');
-
   const [stars, setStars] = useState(1);
   const [disc, setDisc] = useState('');
   const [imageFile, setImageFile] = useState('');
 
   const handleImageChange = (e) => {
-    const file = e.target.files[0]; 
+    const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -132,7 +140,7 @@ const TestimonialForm = ({ addTestimonial }) => {
         {imageFile ? (
           <img src={imageFile} alt="Preview" />
         ) : (
-          <CgProfile size={100} color="#61DBFB" /> // Display React icon if no image uploaded
+          <CgProfile size={100} color="#61DBFB" />
         )}
         <br />
         Profile Photo
@@ -255,12 +263,7 @@ const Form = styled.form`
   gap: 1.5rem;
   max-width: 600px;
   margin: 2rem auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
+  
 
   h2 {
     font-size: 1.8rem;
@@ -279,8 +282,8 @@ const Form = styled.form`
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
     &:focus {
-      border-color: #01be96;
-      box-shadow: 0 0 5px rgba(1, 190, 150, 0.5);
+      border-color: skyblue;
+      box-shadow: 0 0 5px rgba(1, 168, 190, 0.5);
       outline: none;
     }
   }
@@ -312,6 +315,7 @@ const Form = styled.form`
   .rating {
     display: flex;
     gap: 0.5rem;
+    font-size:1.2rem;
     align-items: center;
     justify-content: center;
 
