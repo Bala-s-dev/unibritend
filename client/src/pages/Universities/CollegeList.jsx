@@ -23,8 +23,8 @@ const CollegeList = () => {
 
         if (docSnap.exists()) {
           const data = docSnap.data();
-          console.log("Fetched Colleges Array:", data.colleges); // Log the data
-          setColleges(data.colleges || []); // Corrected key name
+          console.log("Fetched Colleges Array:", data.colleges);
+          setColleges(data.colleges || []);
         } else {
           console.error("Document does not exist!");
           setColleges([]);
@@ -62,7 +62,9 @@ const CollegeList = () => {
       </div>
 
       {loading ? (
-        <p>Loading colleges...</p>
+        <div className="loading-container">
+          <div className="spinner"></div>
+        </div>
       ) : error ? (
         <p className="error">{error}</p>
       ) : (

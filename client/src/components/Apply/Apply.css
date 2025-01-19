@@ -47,7 +47,7 @@
   flex-direction: column;
 }
 
-.apply-form-container input,
+.apply-form-container input, 
 .apply-form-container select {
   margin-bottom: 15px;
   padding: 12px;
@@ -94,6 +94,40 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+/* ApplyForm.css */
+
+/* Styles for the PhoneInput container */
+.react-tel-input {
+  margin-bottom: 15px;
+  border: 1px solid #99bbff; /* Matches input borders */
+  border-radius: 6px;
+  background-color: #f7faff; /* Light blue background */
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #004080; /* Matches input text color */
+  width: 100%;
+}
+
+/* Input box inside PhoneInput */
+.react-tel-input .form-control {
+  border: none; /* Remove default input border */
+  border-radius: 6px;
+  margin-left: px;
+  width: 100%;
+  background-color: transparent; /* Use parent background */
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #004080; /* Input text color */
+}
+
+.phone-error {
+  font-size: 12px;
+  color: #ff4d4d; /* Red for error message */
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+
 .apply-form-container button:hover {
   background-color: #002d66; /* Slightly darker on hover */
 }
