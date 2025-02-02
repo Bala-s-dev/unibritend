@@ -41,7 +41,7 @@ const Container = styled.div`
   background: #fff;
   padding: 1.5rem 1rem;
   margin: 0 1rem;
-  border: 1px solid #01be96;
+  border: 1px solid rgb(1, 133, 190);
   border-radius: 10px;
 `;
 
@@ -59,6 +59,7 @@ const Header = styled.div`
   .star {
     color: #ffcd3c;
     font-size: 1.3rem;
+    
   }
 `;
 

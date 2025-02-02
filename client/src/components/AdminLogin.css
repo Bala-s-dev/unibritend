@@ -128,4 +128,87 @@
   input::placeholder {
     color: #aaa;
   }
+
+/* Client data display section */
+.applications-list {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* Table styles */
+.applications-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.applications-list th,
+.applications-list td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.applications-list th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.applications-list tr:hover {
+  background-color: #f1f1f1;
+}
+
+.applications-list td {
+  color: #333;
+}
+
+/* No applications message */
+.applications-list p {
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+}
+/* Style for tab navigation buttons */
+button {
+  background-color: #007bff; /* Default blue color */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for spacing */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Text size */
+  font-weight: 500; /* Semi-bold text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  margin: 5px; /* Spacing between buttons */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .applications-list table {
+    font-size: 14px;
+  }
+
+  .applications-list th,
+  .applications-list td {
+    padding: 10px;
+  }
+
+  .applications-list {
+    padding: 10px;
+  }
+}
+
   

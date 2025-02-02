@@ -8,7 +8,8 @@
     color: #F0F4F8;
     height: 70px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position:fixed;
+    width: 100%;
     z-index: 1000;
   }
   
@@ -83,7 +84,7 @@
   }
   .brand {
     color: white;
-    letter-spacing: 0.1vi;
+    letter-spacing: 0.09vi;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: x-large;
     font-weight: bold;
@@ -179,9 +180,7 @@
     .nav-menu li {
       margin: 20px 0;
     }
-  
-    /* Mobile view: Dropdown menu */
-@media (max-width: 960px) {
+
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -207,5 +206,11 @@
       transform: translateY(0);
     }
   }
+  
+    /* Mobile view: Dropdown menu */
+@media (max-width: 480px) {
+   .brand {
+    font-size:22px;
+   }
   
   }

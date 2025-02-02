@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { db } from "../../config/firebase";
-import { doc, getDoc } from "firebase/firestore";
-import { FaSearch } from "react-icons/fa";
-import "./CollegeList.css";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { db } from '../../config/firebase';
+import { doc, getDoc } from 'firebase/firestore';
+import { FaSearch } from 'react-icons/fa';
+import './CollegeList.css';
 
 const CollegeList = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [colleges, setColleges] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,20 +18,20 @@ const CollegeList = () => {
         setLoading(true);
         setError(null);
 
-        const docRef = doc(db, "college", country || "");
+        const docRef = doc(db, 'college', country || '');
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
           const data = docSnap.data();
-          console.log("Fetched Colleges Array:", data.colleges); // Log the data
-          setColleges(data.colleges || []); // Corrected key name
+          console.log('Fetched Colleges Array:', data.colleges);
+          setColleges(data.colleges || []);
         } else {
-          console.error("Document does not exist!");
+          console.error('Document does not exist!');
           setColleges([]);
         }
       } catch (err) {
-        console.error("Error fetching data:", err.message);
-        setError("Failed to fetch college data. Please try again.");
+        console.error('Error fetching data:', err.message);
+        setError('Failed to fetch college data. Please try again.');
       } finally {
         setLoading(false);
       }
@@ -62,7 +62,9 @@ const CollegeList = () => {
       </div>
 
       {loading ? (
-        <p>Loading colleges...</p>
+        <div className="loading-container">
+          <div className="spinner"></div>
+        </div>
       ) : error ? (
         <p className="error">{error}</p>
       ) : (
@@ -77,7 +79,7 @@ const CollegeList = () => {
                         <div className="card-front">
                           <div className="card-front__tp">
                             <img
-                              src="https://cdn.prod.website-files.com/5f13b6a8234e41e4d5c4cb7e/6511a66308ea17f65b12202b_5.png"
+                              src={college.img}
                               alt={college.name}
                               className="card-front__icon"
                             />
@@ -95,8 +97,8 @@ const CollegeList = () => {
                             loop
                             width="560"
                             height="315"
-                            src="https://www.youtube.com/embed/t5akgsQsOSk"
-                            title="YouTube video player"
+                            src={college.youtube.replace('watch?v=', 'embed/')}
+                            title={college.name}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
@@ -110,7 +112,8 @@ const CollegeList = () => {
                         <h3 className="college-name">Explore {college.name}</h3>
                         <p className="location">{college.location}</p>
                         <p className="college-desc">
-                          Discover opportunities and vibrant campus life at {college.name}.
+                          Discover opportunities and vibrant campus life at{' '}
+                          {college.name}.
                         </p>
                         <a
                           href={college.website}
@@ -126,7 +129,9 @@ const CollegeList = () => {
                 </section>
               ))
             ) : (
-              <p className="no-results">No colleges match your search criteria.</p>
+              <p className="no-results">
+                No colleges match your search criteria.
+              </p>
             )}
           </section>
         </main>

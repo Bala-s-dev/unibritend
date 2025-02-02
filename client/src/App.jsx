@@ -6,7 +6,7 @@ import ContactPage from "./pages/ContactPage";
 import Navbar from "./components/Navbar/Navbar"
 import ApplicationForm from "./components/ApplicationForm/Application";
 import CollegeList from "./pages/Universities/CollegeList";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import AdminLogin from "./components/AdminLogin";
 
 
@@ -24,7 +24,7 @@ function App() {
         <Route path="/form" element={<ApplicationForm />} />
         <Route path="/admin" element={<AdminLogin />} />
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </Router>
     
   );
