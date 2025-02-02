@@ -136,7 +136,8 @@ body {
 .card-front__icon {
   height: 10rem;
   margin: 4px;
-  width: auto;
+  width: 190px;
+  border-radius: 10px;
 }
 .college-desc {
   font-family: Georgia, 'Times New Roman', Times, serif;

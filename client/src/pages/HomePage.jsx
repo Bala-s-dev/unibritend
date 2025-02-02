@@ -7,7 +7,6 @@ import Testimonials from "../components/Testimonials/Testimonials";
 import Chatbot from "../components/Chatbot/Chatbot";
 
 
-
 const HomePage = () => {
   return (
     <div>
